@@ -1,84 +1,72 @@
-// ---- Nav scroll effect ----
+// ---- Nav scroll ----
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 20);
 });
 
-// ---- Mobile menu toggle ----
+// ---- Mobile menu ----
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
 
 navToggle.addEventListener('click', () => {
   navLinks.classList.toggle('open');
-  navToggle.classList.toggle('active');
 });
 
-// Close menu on link click
 navLinks.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('open');
-    navToggle.classList.remove('active');
-  });
+  link.addEventListener('click', () => navLinks.classList.remove('open'));
 });
 
 // ---- Scroll reveal ----
 const revealElements = document.querySelectorAll(
-  '.service-card, .work-card, .process-step, .stack-category'
+  '.cap-card, .agent-card, .result-card, .process-step, .tech-group'
 );
 
-const revealObserver = new IntersectionObserver(
+const observer = new IntersectionObserver(
   (entries) => {
-    entries.forEach((entry, i) => {
+    entries.forEach(entry => {
       if (entry.isIntersecting) {
-        // Stagger siblings
         const parent = entry.target.parentElement;
         const siblings = Array.from(parent.children).filter(el =>
-          el.classList.contains(entry.target.classList[0])
+          el.matches('.cap-card, .agent-card, .result-card, .process-step, .tech-group')
         );
         const index = siblings.indexOf(entry.target);
-        setTimeout(() => {
-          entry.target.classList.add('visible');
-        }, index * 100);
-        revealObserver.unobserve(entry.target);
+        setTimeout(() => entry.target.classList.add('visible'), index * 80);
+        observer.unobserve(entry.target);
       }
     });
   },
-  { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+  { threshold: 0.08, rootMargin: '0px 0px -30px 0px' }
 );
 
-revealElements.forEach(el => revealObserver.observe(el));
+revealElements.forEach(el => observer.observe(el));
 
 // ---- Contact form ----
-const contactForm = document.getElementById('contactForm');
-contactForm.addEventListener('submit', (e) => {
+document.getElementById('contactForm').addEventListener('submit', (e) => {
   e.preventDefault();
+  const form = e.target;
+  const data = Object.fromEntries(new FormData(form));
 
-  const formData = new FormData(contactForm);
-  const data = Object.fromEntries(formData);
-
-  // Build mailto link as fallback (replace with actual endpoint later)
   const subject = encodeURIComponent(`New inquiry from ${data.name} — ${data.interest}`);
   const body = encodeURIComponent(
     `Name: ${data.name}\nEmail: ${data.email}\nCompany: ${data.company || 'N/A'}\nInterest: ${data.interest}\n\nMessage:\n${data.message}`
   );
   window.location.href = `mailto:chris@gazellia.com?subject=${subject}&body=${body}`;
 
-  // Show confirmation
-  const btn = contactForm.querySelector('button[type="submit"]');
-  const originalText = btn.textContent;
-  btn.textContent = 'Message Sent!';
+  const btn = form.querySelector('button[type="submit"]');
+  const orig = btn.textContent;
+  btn.textContent = 'Sent!';
   btn.style.background = '#4ade80';
   setTimeout(() => {
-    btn.textContent = originalText;
+    btn.textContent = orig;
     btn.style.background = '';
-    contactForm.reset();
+    form.reset();
   }, 3000);
 });
 
-// ---- Smooth anchor scrolling (fallback for older browsers) ----
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    const target = document.querySelector(this.getAttribute('href'));
+// ---- Smooth scroll ----
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', (e) => {
+    const target = document.querySelector(a.getAttribute('href'));
     if (target) {
       e.preventDefault();
       target.scrollIntoView({ behavior: 'smooth' });

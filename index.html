@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gazellia | AI-Powered Development Studio</title>
-  <meta name="description" content="Gazellia builds autonomous AI agents and intelligent software that work around the clock. Custom development, AI automation, and marketing intelligence for businesses ready to move faster.">
+  <meta name="description" content="Gazellia builds autonomous AI agents and intelligent software. Custom development, AI automation, and marketing intelligence for businesses ready to move faster.">
   <link rel="icon" type="image/webp" href="assets/images/gazellia-logo.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -21,10 +21,11 @@
         <span class="nav-logo-text">GAZELLIA</span>
       </a>
       <div class="nav-links" id="navLinks">
-        <a href="#services">Services</a>
-        <a href="#work">Work</a>
-        <a href="#about">About</a>
-        <a href="#contact" class="nav-cta">Get in Touch</a>
+        <a href="#capabilities">Capabilities</a>
+        <a href="#agents">Agents</a>
+        <a href="#results">Results</a>
+        <a href="#technology">Technology</a>
+        <a href="#contact" class="nav-cta">Talk to Us</a>
       </div>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
         <span></span><span></span><span></span>
@@ -34,106 +35,170 @@
 
   <!-- Hero -->
   <section class="hero">
-    <div class="hero-bg-grid"></div>
+    <div class="hero-grid-bg"></div>
+    <div class="hero-glow"></div>
     <div class="hero-content">
-      <div class="hero-text">
-        <div class="hero-badge">AI Development Studio</div>
-        <h1>We Build Software<br>That <span class="text-gold">Thinks</span></h1>
-        <p class="hero-subtitle">Autonomous AI agents that write code, manage campaigns, and optimize infrastructure — running 24/7 so you don't have to.</p>
-        <div class="hero-actions">
-          <a href="#contact" class="btn btn-primary">Start a Project</a>
-          <a href="#work" class="btn btn-ghost">See Our Work</a>
-        </div>
-        <div class="hero-stats">
-          <div class="stat">
-            <span class="stat-value">13+</span>
-            <span class="stat-label">Years Building Software</span>
-          </div>
-          <div class="stat">
-            <span class="stat-value">24/7</span>
-            <span class="stat-label">Autonomous Agents Running</span>
-          </div>
-          <div class="stat">
-            <span class="stat-value">1</span>
-            <span class="stat-label">Startup Acquired</span>
-          </div>
-        </div>
+      <div class="hero-badge">AI Development Studio</div>
+      <h1>Your software should<br>work while you <span class="text-gold">sleep</span></h1>
+      <p class="hero-subtitle">We build autonomous AI agents that write code, run marketing campaigns, and optimize infrastructure — 24 hours a day, 7 days a week.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">Start a Project</a>
+        <a href="#agents" class="btn btn-ghost">See Live Agents</a>
       </div>
-      <div class="hero-image">
-        <div class="hero-image-frame">
-          <img src="assets/images/chris-hero.png" alt="Chris Callaway, Founder of Gazellia">
-          <div class="hero-image-glow"></div>
-        </div>
+    </div>
+    <div class="hero-metrics">
+      <div class="metric">
+        <div class="metric-value">3</div>
+        <div class="metric-label">Autonomous Agents in Production</div>
+      </div>
+      <div class="metric-divider"></div>
+      <div class="metric">
+        <div class="metric-value">1</div>
+        <div class="metric-label">Product Acquired by Bullhorn</div>
+      </div>
+      <div class="metric-divider"></div>
+      <div class="metric">
+        <div class="metric-value">13+</div>
+        <div class="metric-label">Years Shipping Production Software</div>
+      </div>
+      <div class="metric-divider"></div>
+      <div class="metric">
+        <div class="metric-value">24/7</div>
+        <div class="metric-label">Agent Uptime</div>
       </div>
     </div>
   </section>
 
-  <!-- Logos / Social Proof -->
-  <section class="proof">
-    <div class="proof-inner">
-      <p class="proof-label">Trusted by teams building the future</p>
-      <div class="proof-logos">
-        <span class="proof-logo">Kroger</span>
-        <span class="proof-logo">Cloudgate</span>
-        <span class="proof-logo">Bullhorn</span>
-        <span class="proof-logo">CDW</span>
-        <span class="proof-logo">Paro</span>
+  <!-- Partners -->
+  <section class="partners">
+    <div class="partners-inner">
+      <p class="partners-label">Trusted by</p>
+      <div class="partners-track">
+        <span class="partner">Kroger</span>
+        <span class="partner">Bullhorn</span>
+        <span class="partner">CDW</span>
+        <span class="partner">Cloudgate</span>
+        <span class="partner">Paro</span>
+        <span class="partner">Altus</span>
+        <span class="partner">Innovative Solutions</span>
       </div>
     </div>
   </section>
 
-  <!-- Services -->
-  <section class="services" id="services">
+  <!-- What We Do -->
+  <section class="capabilities" id="capabilities">
     <div class="section-inner">
       <div class="section-header">
-        <span class="section-tag">What We Do</span>
-        <h2>Three ways we make your business faster</h2>
-        <p class="section-desc">We don't just build software — we build software that operates itself.</p>
+        <span class="section-tag">Capabilities</span>
+        <h2>We don't just build software.<br>We build software that <span class="text-gold">operates itself.</span></h2>
       </div>
-      <div class="services-grid">
 
-        <div class="service-card">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-          </div>
+      <div class="cap-row">
+        <div class="cap-card cap-large">
+          <div class="cap-number">01</div>
           <h3>Autonomous AI Agents</h3>
-          <p>Custom AI agents that pick up tickets, write production code, open pull requests, and respond to review feedback — without human intervention. Your own tireless developer that never sleeps.</p>
-          <ul class="service-features">
-            <li>Monday.com / Jira integration</li>
-            <li>Automated code review & PR creation</li>
-            <li>Learns from each ticket it completes</li>
-            <li>Multi-repo, multi-client capable</li>
-          </ul>
-        </div>
-
-        <div class="service-card featured">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <p>Custom agents that integrate with your project management tools, pick up tasks, write production-quality code, open pull requests, respond to review feedback, and deploy — without human intervention. Each agent learns from every task it completes, building institutional knowledge over time.</p>
+          <div class="cap-tags">
+            <span>Ticket-to-PR Automation</span>
+            <span>Self-Improving</span>
+            <span>Multi-Repo</span>
+            <span>Code Review</span>
           </div>
+        </div>
+        <div class="cap-card">
+          <div class="cap-number">02</div>
           <h3>AI Marketing Automation</h3>
-          <p>An intelligent marketing engine that monitors ad performance, generates creative assets, updates production websites, and optimizes campaigns — with human-in-the-loop approval before anything goes live.</p>
-          <ul class="service-features">
-            <li>Meta Ad Manager integration</li>
-            <li>AI-generated creative & copy</li>
-            <li>Automated A/B testing</li>
-            <li>Approval workflows built in</li>
-          </ul>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          <p>Intelligent marketing engines that monitor campaign performance, generate creative assets, update production websites, and optimize spend — with human-in-the-loop approval before anything goes live.</p>
+          <div class="cap-tags">
+            <span>Meta Ads</span>
+            <span>AI Creative</span>
+            <span>Auto-Optimization</span>
           </div>
+        </div>
+        <div class="cap-card">
+          <div class="cap-number">03</div>
           <h3>Custom Software & Apps</h3>
-          <p>Full-stack web and mobile applications built on modern infrastructure. From React Native apps to serverless backends on AWS — designed to scale from day one.</p>
-          <ul class="service-features">
-            <li>React Native / Expo mobile apps</li>
-            <li>Node.js / TypeScript backends</li>
-            <li>AWS infrastructure (Lambda, EC2, S3)</li>
-            <li>Ongoing maintenance & optimization</li>
-          </ul>
+          <p>Full-stack web and mobile applications on modern infrastructure. From React Native apps to serverless AWS backends — designed to scale from day one and maintained continuously.</p>
+          <div class="cap-tags">
+            <span>Mobile</span>
+            <span>Web</span>
+            <span>AWS</span>
+            <span>API Design</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Agents -->
+  <section class="agents" id="agents">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-tag">Live Agents</span>
+        <h2>Not demos. Not prototypes.<br><span class="text-gold">Running in production right now.</span></h2>
+        <p class="section-desc">Every agent listed here is actively processing tasks, writing code, and delivering results for real clients.</p>
+      </div>
+
+      <div class="agent-grid">
+        <div class="agent-card">
+          <div class="agent-header">
+            <div class="agent-status-dot"></div>
+            <span class="agent-status-text">Live</span>
+          </div>
+          <h3>Goro</h3>
+          <p class="agent-role">Autonomous Developer</p>
+          <p class="agent-desc">Picks up tickets from Monday.com, clones the repo, writes code, creates pull requests, and iterates on review feedback. Maintains a knowledge base of patterns and gotchas learned from every completed task.</p>
+          <div class="agent-stats">
+            <div class="agent-stat">
+              <span class="agent-stat-label">Integrations</span>
+              <span class="agent-stat-value">Monday.com, GitHub, Slack</span>
+            </div>
+            <div class="agent-stat">
+              <span class="agent-stat-label">Stack</span>
+              <span class="agent-stat-value">AWS Bedrock, Claude, TypeScript</span>
+            </div>
+          </div>
         </div>
 
+        <div class="agent-card">
+          <div class="agent-header">
+            <div class="agent-status-dot"></div>
+            <span class="agent-status-text">Live</span>
+          </div>
+          <h3>Rapunzel</h3>
+          <p class="agent-role">WordPress Maintenance Agent</p>
+          <p class="agent-desc">Handles plugin updates, content changes, performance optimization, and bug fixes for production e-commerce sites. From ticket intake to deployment — fully autonomous.</p>
+          <div class="agent-stats">
+            <div class="agent-stat">
+              <span class="agent-stat-label">Integrations</span>
+              <span class="agent-stat-value">Monday.com, WordPress, SSH</span>
+            </div>
+            <div class="agent-stat">
+              <span class="agent-stat-label">Stack</span>
+              <span class="agent-stat-value">AWS Bedrock, PHP, Lightsail</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="agent-card">
+          <div class="agent-header">
+            <div class="agent-status-dot"></div>
+            <span class="agent-status-text">Live</span>
+          </div>
+          <h3>Mirizan</h3>
+          <p class="agent-role">Marketing Intelligence</p>
+          <p class="agent-desc">Monitors Meta ad campaigns, generates creative assets with AI, updates production websites, and manages approval workflows. Keeps campaigns optimized around the clock.</p>
+          <div class="agent-stats">
+            <div class="agent-stat">
+              <span class="agent-stat-label">Integrations</span>
+              <span class="agent-stat-value">Meta Ads API, Gemini, S3</span>
+            </div>
+            <div class="agent-stat">
+              <span class="agent-stat-label">Stack</span>
+              <span class="agent-stat-value">Node.js, Lambda, DynamoDB</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -142,223 +207,125 @@
   <section class="process">
     <div class="section-inner">
       <div class="section-header">
-        <span class="section-tag">How It Works</span>
-        <h2>From idea to autonomous operation</h2>
+        <span class="section-tag">Process</span>
+        <h2>From concept to autonomous operation</h2>
       </div>
-      <div class="process-steps">
+      <div class="process-timeline">
         <div class="process-step">
-          <div class="step-number">01</div>
-          <h3>Discovery</h3>
-          <p>We learn your business, your workflows, and where AI can make the biggest impact. No generic solutions — everything is tailored to how you actually work.</p>
+          <div class="step-marker">
+            <div class="step-dot"></div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-content">
+            <h3>Discovery</h3>
+            <p>We map your workflows, identify high-impact automation opportunities, and define what success looks like. No generic playbooks — every engagement is tailored.</p>
+          </div>
         </div>
-        <div class="process-connector"></div>
         <div class="process-step">
-          <div class="step-number">02</div>
-          <h3>Build</h3>
-          <p>We design and build your solution — whether it's an AI agent, a mobile app, or an automation pipeline. You see progress weekly and approve every major decision.</p>
+          <div class="step-marker">
+            <div class="step-dot"></div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-content">
+            <h3>Build & Iterate</h3>
+            <p>Rapid development cycles with weekly visibility. You see working software early and approve every major decision. We integrate directly with your existing tools — Monday.com, GitHub, Slack, Jira.</p>
+          </div>
         </div>
-        <div class="process-connector"></div>
         <div class="process-step">
-          <div class="step-number">03</div>
-          <h3>Deploy & Evolve</h3>
-          <p>Your software goes live and keeps getting smarter. AI agents learn from every task they complete. Infrastructure is monitored and optimized continuously.</p>
+          <div class="step-marker">
+            <div class="step-dot"></div>
+          </div>
+          <div class="step-content">
+            <h3>Deploy & Evolve</h3>
+            <p>Your system goes live and starts learning. AI agents accumulate knowledge from every task. Infrastructure is monitored and optimized continuously. Your software gets better without additional cost.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Work / Case Studies -->
-  <section class="work" id="work">
+  <!-- Results / Track Record -->
+  <section class="results" id="results">
     <div class="section-inner">
       <div class="section-header">
-        <span class="section-tag">Our Work</span>
-        <h2>Real agents. Real production. Real results.</h2>
-        <p class="section-desc">These aren't demos or proof-of-concepts. These are autonomous systems running in production right now.</p>
+        <span class="section-tag">Track Record</span>
+        <h2>Proven at scale</h2>
+        <p class="section-desc">From startup acquisitions to enterprise partnerships — results that speak for themselves.</p>
       </div>
-      <div class="work-grid">
-
-        <div class="work-card">
-          <div class="work-card-header">
-            <span class="work-tag">AI Dev Agent</span>
-            <span class="work-status live">Live</span>
-          </div>
-          <h3>Goro</h3>
-          <p>Autonomous developer agent for a recruiting platform. Picks up tickets from Monday.com, writes code, creates pull requests, and responds to code review feedback. Learns from every completed task to get better over time.</p>
-          <div class="work-tech">
-            <span>AWS Bedrock</span>
-            <span>Claude</span>
-            <span>TypeScript</span>
-            <span>MySQL</span>
-            <span>GitHub</span>
-          </div>
+      <div class="results-grid">
+        <div class="result-card highlight">
+          <span class="result-tag">Acquisition</span>
+          <h3>Fyre &rarr; Bullhorn</h3>
+          <p>Built the intelligent web scraping and data enrichment engine for Fyre, a recruiting technology startup. The platform was acquired by Bullhorn and now serves thousands of customers worldwide.</p>
         </div>
-
-        <div class="work-card">
-          <div class="work-card-header">
-            <span class="work-tag">AI Dev Agent</span>
-            <span class="work-status live">Live</span>
-          </div>
-          <h3>Rapunzel</h3>
-          <p>WordPress maintenance agent that autonomously handles plugin updates, content changes, performance optimization, and bug fixes for a production e-commerce site — all from ticket intake to deployment.</p>
-          <div class="work-tech">
-            <span>AWS Bedrock</span>
-            <span>WordPress</span>
-            <span>PHP</span>
-            <span>Lightsail</span>
-          </div>
-        </div>
-
-        <div class="work-card">
-          <div class="work-card-header">
-            <span class="work-tag">AI Marketing</span>
-            <span class="work-status live">Live</span>
-          </div>
-          <h3>Mirizan</h3>
-          <p>Autonomous marketing engine that monitors Meta ad campaigns, generates creative assets with AI, updates production websites, and manages approval workflows — keeping campaigns optimized around the clock.</p>
-          <div class="work-tech">
-            <span>Meta API</span>
-            <span>Gemini</span>
-            <span>Node.js</span>
-            <span>Lambda</span>
-          </div>
-        </div>
-
-        <div class="work-card">
-          <div class="work-card-header">
-            <span class="work-tag">Startup (Acquired)</span>
-            <span class="work-status acquired">Acquired by Bullhorn</span>
-          </div>
-          <h3>Fyre</h3>
-          <p>Built the intelligent web scraping engine for this recruiting technology startup. The system now powers data enrichment for thousands of Bullhorn customers worldwide after the acquisition.</p>
-          <div class="work-tech">
-            <span>Web Scraping</span>
-            <span>Data Pipeline</span>
-            <span>Node.js</span>
-            <span>REST APIs</span>
-          </div>
-        </div>
-
-        <div class="work-card">
-          <div class="work-card-header">
-            <span class="work-tag">Platform</span>
-            <span class="work-status">Co-Founded</span>
-          </div>
+        <div class="result-card">
+          <span class="result-tag">Platform</span>
           <h3>Cloudgate</h3>
-          <p>Co-founded and built a full-stack recruiting platform from the ground up. Candidate management, job matching, client portals, and analytics — serving recruiting agencies across the country.</p>
-          <div class="work-tech">
-            <span>React</span>
-            <span>Node.js</span>
-            <span>MySQL</span>
-            <span>AWS</span>
-            <span>REST APIs</span>
-          </div>
+          <p>Co-built a full-stack recruiting platform from the ground up — candidate management, job matching, client portals, and analytics serving recruiting agencies across the country.</p>
         </div>
-
-        <div class="work-card">
-          <div class="work-card-header">
-            <span class="work-tag">Mobile App</span>
-            <span class="work-status">In Development</span>
-          </div>
-          <h3>Gazellia Command Center</h3>
-          <p>React Native mobile dashboard for monitoring all AI agents, AWS costs, ticket throughput, and infrastructure health — from your phone. Real-time visibility into autonomous operations.</p>
-          <div class="work-tech">
-            <span>React Native</span>
-            <span>Expo</span>
-            <span>TypeScript</span>
-            <span>Lambda</span>
-          </div>
+        <div class="result-card">
+          <span class="result-tag">Enterprise</span>
+          <h3>Kroger</h3>
+          <p>Ongoing software development partnership with one of the largest grocery retailers in the United States. Enterprise-grade systems built to scale.</p>
         </div>
-
+        <div class="result-card">
+          <span class="result-tag">Innovation</span>
+          <h3>AR / Google Glass</h3>
+          <p>Early-stage augmented reality development for the Google Glass platform — before AR went mainstream. Research and prototyping at the University of Central Florida.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Tech Stack -->
-  <section class="stack">
+  <!-- Technology -->
+  <section class="technology" id="technology">
     <div class="section-inner">
       <div class="section-header">
         <span class="section-tag">Technology</span>
         <h2>Built on what works</h2>
-        <p class="section-desc">No hype-driven choices. Every tool in our stack is there because it's proven in production.</p>
+        <p class="section-desc">Production-proven tools. No hype-driven choices.</p>
       </div>
-      <div class="stack-grid">
-        <div class="stack-category">
-          <h4>AI & Machine Learning</h4>
-          <div class="stack-items">
+      <div class="tech-grid">
+        <div class="tech-group">
+          <h4>AI & Intelligence</h4>
+          <div class="tech-items">
             <span>AWS Bedrock</span>
             <span>Claude</span>
-            <span>Amazon Knowledge Bases</span>
             <span>Gemini</span>
+            <span>Knowledge Bases</span>
             <span>RAG Pipelines</span>
           </div>
         </div>
-        <div class="stack-category">
-          <h4>Backend & Infrastructure</h4>
-          <div class="stack-items">
-            <span>Node.js</span>
-            <span>TypeScript</span>
+        <div class="tech-group">
+          <h4>Infrastructure</h4>
+          <div class="tech-items">
             <span>AWS Lambda</span>
             <span>EC2</span>
             <span>S3 / CloudFront</span>
             <span>DynamoDB</span>
             <span>MySQL</span>
+            <span>Docker</span>
           </div>
         </div>
-        <div class="stack-category">
-          <h4>Frontend & Mobile</h4>
-          <div class="stack-items">
+        <div class="tech-group">
+          <h4>Development</h4>
+          <div class="tech-items">
+            <span>TypeScript</span>
+            <span>Node.js</span>
             <span>React</span>
             <span>React Native</span>
-            <span>Expo</span>
             <span>Next.js</span>
+            <span>Expo</span>
           </div>
         </div>
-        <div class="stack-category">
+        <div class="tech-group">
           <h4>Integrations</h4>
-          <div class="stack-items">
+          <div class="tech-items">
             <span>Monday.com</span>
             <span>GitHub</span>
             <span>Meta Ads API</span>
             <span>Slack</span>
-            <span>REST / Webhooks</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section class="about" id="about">
-    <div class="section-inner">
-      <div class="about-layout">
-        <div class="about-images">
-          <div class="about-image-main">
-            <img src="assets/images/chris-professional.png" alt="Chris Callaway">
-          </div>
-          <div class="about-image-secondary">
-            <img src="assets/images/chris-casual.png" alt="Chris Callaway">
-          </div>
-        </div>
-        <div class="about-text">
-          <span class="section-tag">About</span>
-          <h2>Built by an engineer,<br>not a salesperson</h2>
-          <p class="about-lead">I'm Chris Callaway — founder of Gazellia and the engineer behind every system we build. I've spent 13+ years writing production software, and I still write code every single day.</p>
-          <p>I started Gazellia because I saw something broken in the industry: companies spending six figures on development agencies that ship mediocre code slowly. I knew AI could change that equation — not by replacing developers, but by giving businesses access to intelligent systems that actually get work done.</p>
-          <p>Before Gazellia, I built the web scraping engine at <strong>Fyre</strong> — a recruiting startup that was acquired by <strong>Bullhorn</strong> and now serves thousands of customers. I co-founded <strong>Cloudgate</strong>, a recruiting platform built from scratch. I graduated from the University of Central Florida with a 4.0 in Computer Science and worked on augmented reality projects for Google Glass before AR was mainstream.</p>
-          <p>Today, I run a team of AI agents and human developers that handle everything from autonomous code generation to AI-powered marketing. The agents you see on this site aren't concepts — they're running right now, completing tickets, optimizing campaigns, and getting smarter with every task.</p>
-          <div class="about-creds">
-            <div class="cred">
-              <span class="cred-value">UCF</span>
-              <span class="cred-label">Computer Science, 4.0 GPA</span>
-            </div>
-            <div class="cred">
-              <span class="cred-value">Fyre</span>
-              <span class="cred-label">Acquired by Bullhorn</span>
-            </div>
-            <div class="cred">
-              <span class="cred-value">Cloudgate</span>
-              <span class="cred-label">Co-Founder & CTO</span>
-            </div>
+            <span>Webhooks</span>
           </div>
         </div>
       </div>
@@ -368,27 +335,43 @@
   <!-- CTA -->
   <section class="cta" id="contact">
     <div class="section-inner">
-      <div class="cta-content">
-        <img src="assets/images/horns-gold.png" alt="" class="cta-icon">
-        <h2>Ready to build something intelligent?</h2>
-        <p>Tell us about your project. Whether you need an AI agent, a mobile app, or a smarter way to run your business — we'll show you what's possible.</p>
-        <form class="contact-form" id="contactForm">
-          <div class="form-row">
-            <input type="text" name="name" placeholder="Your name" required>
-            <input type="email" name="email" placeholder="Your email" required>
+      <div class="cta-layout">
+        <div class="cta-text">
+          <img src="assets/images/horns-gold.png" alt="" class="cta-icon">
+          <h2>Let's build something<br>that runs itself</h2>
+          <p>Whether you need an autonomous agent, a smarter marketing pipeline, or a custom application — we'll show you what's possible.</p>
+          <div class="cta-trust">
+            <div class="trust-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span>No long-term contracts</span>
+            </div>
+            <div class="trust-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span>Weekly progress visibility</span>
+            </div>
+            <div class="trust-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span>Production-ready from day one</span>
+            </div>
           </div>
-          <input type="text" name="company" placeholder="Company (optional)">
-          <select name="interest" required>
-            <option value="" disabled selected>What are you interested in?</option>
-            <option value="ai-agents">AI Agents & Automation</option>
-            <option value="ai-marketing">AI Marketing Automation</option>
-            <option value="custom-software">Custom Software / App Development</option>
-            <option value="consulting">AI Strategy Consulting</option>
-            <option value="other">Something Else</option>
-          </select>
-          <textarea name="message" rows="4" placeholder="Tell us about your project..." required></textarea>
-          <button type="submit" class="btn btn-primary btn-full">Send Message</button>
-        </form>
+        </div>
+        <div class="cta-form-wrap">
+          <form class="contact-form" id="contactForm">
+            <input type="text" name="name" placeholder="Your name" required>
+            <input type="email" name="email" placeholder="Work email" required>
+            <input type="text" name="company" placeholder="Company">
+            <select name="interest" required>
+              <option value="" disabled selected>What are you looking for?</option>
+              <option value="ai-agents">AI Agents & Automation</option>
+              <option value="ai-marketing">AI Marketing Automation</option>
+              <option value="custom-software">Custom Software / App Development</option>
+              <option value="consulting">AI Strategy Consulting</option>
+              <option value="other">Something Else</option>
+            </select>
+            <textarea name="message" rows="4" placeholder="Tell us about your project..." required></textarea>
+            <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+          </form>
+        </div>
       </div>
     </div>
   </section>
@@ -401,9 +384,9 @@
         <span>GAZELLIA</span>
       </div>
       <div class="footer-links">
-        <a href="#services">Services</a>
-        <a href="#work">Work</a>
-        <a href="#about">About</a>
+        <a href="#capabilities">Capabilities</a>
+        <a href="#agents">Agents</a>
+        <a href="#results">Results</a>
         <a href="#contact">Contact</a>
       </div>
       <div class="footer-copy">
