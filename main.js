@@ -40,7 +40,7 @@ if (tickerInner) {
 }
 
 // ---- Contact form ----
-const CONTACT_API = 'https://mbp3znutrjhiq4khw6we3moyr40igqgz.lambda-url.us-east-1.on.aws/';
+const CONTACT_API = 'https://fldmyk5lc3.execute-api.us-east-1.amazonaws.com/contact';
 
 document.getElementById('contactForm').addEventListener('submit', async (e) => {
   e.preventDefault();
