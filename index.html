@@ -8,7 +8,7 @@
   <link rel="icon" type="image/webp" href="assets/images/gazellia-logo.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -21,10 +21,10 @@
         <span class="nav-logo-text">GAZELLIA</span>
       </a>
       <div class="nav-links" id="navLinks">
-        <a href="#capabilities">Capabilities</a>
         <a href="#agents">Agents</a>
+        <a href="#capabilities">Capabilities</a>
         <a href="#results">Results</a>
-        <a href="#technology">Technology</a>
+        <a href="#technology">Stack</a>
         <a href="#contact" class="nav-cta">Talk to Us</a>
       </div>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
@@ -35,36 +35,44 @@
 
   <!-- Hero -->
   <section class="hero">
-    <div class="hero-grid-bg"></div>
-    <div class="hero-glow"></div>
+    <div class="hero-bg">
+      <img src="assets/images/generated/hero-abstract.png" alt="" class="hero-bg-img">
+      <div class="hero-bg-overlay"></div>
+    </div>
     <div class="hero-content">
-      <div class="hero-badge">AI Development Studio</div>
-      <h1>Your software should<br>work while you <span class="text-gold">sleep</span></h1>
-      <p class="hero-subtitle">We build autonomous AI agents that write code, run marketing campaigns, and optimize infrastructure — 24 hours a day, 7 days a week.</p>
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        Autonomous AI Agents — Live in Production
+      </div>
+      <h1>Software that builds,<br>markets, and runs <span class="text-gold">itself</span></h1>
+      <p class="hero-subtitle">We deploy intelligent agents that handle development, marketing, infrastructure, and QA — autonomously. Your operations don't stop when your team clocks out.</p>
       <div class="hero-actions">
         <a href="#contact" class="btn btn-primary">Start a Project</a>
-        <a href="#agents" class="btn btn-ghost">See Live Agents</a>
+        <a href="#agents" class="btn btn-ghost">Explore Agents</a>
       </div>
     </div>
-    <div class="hero-metrics">
-      <div class="metric">
-        <div class="metric-value">3</div>
-        <div class="metric-label">Autonomous Agents in Production</div>
-      </div>
-      <div class="metric-divider"></div>
-      <div class="metric">
-        <div class="metric-value">1</div>
-        <div class="metric-label">Product Acquired by Bullhorn</div>
-      </div>
-      <div class="metric-divider"></div>
-      <div class="metric">
-        <div class="metric-value">13+</div>
-        <div class="metric-label">Years Shipping Production Software</div>
-      </div>
-      <div class="metric-divider"></div>
-      <div class="metric">
-        <div class="metric-value">24/7</div>
-        <div class="metric-label">Agent Uptime</div>
+    <div class="hero-ticker">
+      <div class="ticker-inner">
+        <div class="ticker-item">
+          <span class="ticker-dot green"></span>
+          <span>Development Agent — deploying build #1,847</span>
+        </div>
+        <div class="ticker-item">
+          <span class="ticker-dot green"></span>
+          <span>Marketing Agent — optimizing ad creative</span>
+        </div>
+        <div class="ticker-item">
+          <span class="ticker-dot green"></span>
+          <span>Infrastructure Agent — monitoring 14 services</span>
+        </div>
+        <div class="ticker-item">
+          <span class="ticker-dot gold"></span>
+          <span>QA Agent — running regression suite</span>
+        </div>
+        <div class="ticker-item">
+          <span class="ticker-dot green"></span>
+          <span>Data Agent — processing enrichment pipeline</span>
+        </div>
       </div>
     </div>
   </section>
@@ -72,206 +80,236 @@
   <!-- Partners -->
   <section class="partners">
     <div class="partners-inner">
-      <p class="partners-label">Trusted by</p>
       <div class="partners-track">
         <span class="partner">Kroger</span>
+        <span class="partner-sep">/</span>
         <span class="partner">Bullhorn</span>
+        <span class="partner-sep">/</span>
         <span class="partner">CDW</span>
+        <span class="partner-sep">/</span>
         <span class="partner">Cloudgate</span>
+        <span class="partner-sep">/</span>
         <span class="partner">Paro</span>
+        <span class="partner-sep">/</span>
         <span class="partner">Altus</span>
+        <span class="partner-sep">/</span>
         <span class="partner">Innovative Solutions</span>
       </div>
     </div>
   </section>
 
-  <!-- What We Do -->
+  <!-- Agents -->
+  <section class="agents" id="agents">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-tag">Our Agents</span>
+        <h2>AI that doesn't just assist.<br>It <span class="text-gold">operates.</span></h2>
+        <p class="section-desc">Each agent is purpose-built for a domain, runs autonomously, and gets smarter with every task it completes.</p>
+      </div>
+
+      <div class="agent-showcase">
+
+        <div class="agent-card">
+          <div class="agent-visual">
+            <img src="assets/images/generated/agent-dev.png" alt="">
+          </div>
+          <div class="agent-info">
+            <div class="agent-header">
+              <div class="agent-status"><span class="status-dot live"></span> Production</div>
+            </div>
+            <h3>Development Agent</h3>
+            <p>Picks up tasks from your project board, clones the repo, writes production code, creates pull requests, and iterates on review feedback. Maintains a growing knowledge base of patterns and gotchas learned from every completed task — so it gets faster and more accurate over time.</p>
+            <div class="agent-capabilities">
+              <span>Ticket-to-PR automation</span>
+              <span>Code review response</span>
+              <span>Self-improving memory</span>
+              <span>Multi-repo support</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="agent-card reverse">
+          <div class="agent-visual">
+            <img src="assets/images/generated/agent-marketing.png" alt="">
+          </div>
+          <div class="agent-info">
+            <div class="agent-header">
+              <div class="agent-status"><span class="status-dot live"></span> Production</div>
+            </div>
+            <h3>Marketing Agent</h3>
+            <p>Monitors campaign performance across ad platforms, generates creative variations with AI, updates production landing pages, and manages budget allocation — all with human-in-the-loop approval before anything goes live. Optimizes around the clock while you sleep.</p>
+            <div class="agent-capabilities">
+              <span>Ad platform integration</span>
+              <span>AI creative generation</span>
+              <span>Approval workflows</span>
+              <span>Auto-optimization</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="agent-card">
+          <div class="agent-visual">
+            <img src="assets/images/generated/agent-infra.png" alt="">
+          </div>
+          <div class="agent-info">
+            <div class="agent-header">
+              <div class="agent-status"><span class="status-dot live"></span> Production</div>
+            </div>
+            <h3>Infrastructure Agent</h3>
+            <p>Watches your cloud environment for cost anomalies, performance degradation, and security drift. Automatically remediates common issues, generates optimization reports, and alerts your team when human judgment is needed.</p>
+            <div class="agent-capabilities">
+              <span>Cost optimization</span>
+              <span>Health monitoring</span>
+              <span>Auto-remediation</span>
+              <span>Security scanning</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="agent-card reverse">
+          <div class="agent-visual">
+            <img src="assets/images/generated/agent-data.png" alt="">
+          </div>
+          <div class="agent-info">
+            <div class="agent-header">
+              <div class="agent-status"><span class="status-dot beta"></span> Beta</div>
+            </div>
+            <h3>Data Intelligence Agent</h3>
+            <p>Ingests data from multiple sources, detects patterns, enriches records, and surfaces actionable insights. Built for companies drowning in data but starving for intelligence. Connects to your existing databases and APIs without migration.</p>
+            <div class="agent-capabilities">
+              <span>Multi-source ingestion</span>
+              <span>Pattern detection</span>
+              <span>Data enrichment</span>
+              <span>Insight surfacing</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="agent-card">
+          <div class="agent-visual">
+            <img src="assets/images/generated/agent-qa.png" alt="">
+          </div>
+          <div class="agent-info">
+            <div class="agent-header">
+              <div class="agent-status"><span class="status-dot beta"></span> Beta</div>
+            </div>
+            <h3>QA & Testing Agent</h3>
+            <p>Generates test cases from requirements, runs regression suites, identifies flaky tests, and validates deployments before they hit production. Integrates with your CI/CD pipeline and learns which areas of the codebase are most fragile.</p>
+            <div class="agent-capabilities">
+              <span>Test generation</span>
+              <span>Regression automation</span>
+              <span>CI/CD integration</span>
+              <span>Fragility detection</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Capabilities -->
   <section class="capabilities" id="capabilities">
     <div class="section-inner">
       <div class="section-header">
         <span class="section-tag">Capabilities</span>
-        <h2>We don't just build software.<br>We build software that <span class="text-gold">operates itself.</span></h2>
+        <h2>What we build</h2>
       </div>
-
-      <div class="cap-row">
-        <div class="cap-card cap-large">
-          <div class="cap-number">01</div>
-          <h3>Autonomous AI Agents</h3>
-          <p>Custom agents that integrate with your project management tools, pick up tasks, write production-quality code, open pull requests, respond to review feedback, and deploy — without human intervention. Each agent learns from every task it completes, building institutional knowledge over time.</p>
-          <div class="cap-tags">
-            <span>Ticket-to-PR Automation</span>
-            <span>Self-Improving</span>
-            <span>Multi-Repo</span>
-            <span>Code Review</span>
+      <div class="cap-grid">
+        <div class="cap-item">
+          <div class="cap-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
           </div>
+          <h3>Autonomous Agent Systems</h3>
+          <p>Purpose-built agents that integrate with your tools and execute complex workflows end-to-end.</p>
         </div>
-        <div class="cap-card">
-          <div class="cap-number">02</div>
-          <h3>AI Marketing Automation</h3>
-          <p>Intelligent marketing engines that monitor campaign performance, generate creative assets, update production websites, and optimize spend — with human-in-the-loop approval before anything goes live.</p>
-          <div class="cap-tags">
-            <span>Meta Ads</span>
-            <span>AI Creative</span>
-            <span>Auto-Optimization</span>
+        <div class="cap-item">
+          <div class="cap-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
           </div>
+          <h3>Web & Mobile Applications</h3>
+          <p>Full-stack apps from React frontends to serverless backends — designed to scale from day one.</p>
         </div>
-        <div class="cap-card">
-          <div class="cap-number">03</div>
-          <h3>Custom Software & Apps</h3>
-          <p>Full-stack web and mobile applications on modern infrastructure. From React Native apps to serverless AWS backends — designed to scale from day one and maintained continuously.</p>
-          <div class="cap-tags">
-            <span>Mobile</span>
-            <span>Web</span>
-            <span>AWS</span>
-            <span>API Design</span>
+        <div class="cap-item">
+          <div class="cap-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
           </div>
+          <h3>AI Integration & RAG</h3>
+          <p>Embed intelligence into existing systems — knowledge bases, retrieval pipelines, natural language interfaces.</p>
+        </div>
+        <div class="cap-item">
+          <div class="cap-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+          </div>
+          <h3>Cloud Architecture</h3>
+          <p>AWS infrastructure design, cost optimization, multi-account strategies, and managed DevOps.</p>
+        </div>
+        <div class="cap-item">
+          <div class="cap-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          </div>
+          <h3>API Design & Integration</h3>
+          <p>Connect your systems with clean, documented APIs. REST, webhooks, third-party platform integrations.</p>
+        </div>
+        <div class="cap-item">
+          <div class="cap-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <h3>Managed Operations</h3>
+          <p>Continuous monitoring, optimization, and maintenance. Your software keeps improving after launch.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Live Agents -->
-  <section class="agents" id="agents">
+  <!-- Process Visual -->
+  <section class="process-visual">
     <div class="section-inner">
-      <div class="section-header">
-        <span class="section-tag">Live Agents</span>
-        <h2>Not demos. Not prototypes.<br><span class="text-gold">Running in production right now.</span></h2>
-        <p class="section-desc">Every agent listed here is actively processing tasks, writing code, and delivering results for real clients.</p>
-      </div>
-
-      <div class="agent-grid">
-        <div class="agent-card">
-          <div class="agent-header">
-            <div class="agent-status-dot"></div>
-            <span class="agent-status-text">Live</span>
-          </div>
-          <h3>Goro</h3>
-          <p class="agent-role">Autonomous Developer</p>
-          <p class="agent-desc">Picks up tickets from Monday.com, clones the repo, writes code, creates pull requests, and iterates on review feedback. Maintains a knowledge base of patterns and gotchas learned from every completed task.</p>
-          <div class="agent-stats">
-            <div class="agent-stat">
-              <span class="agent-stat-label">Integrations</span>
-              <span class="agent-stat-value">Monday.com, GitHub, Slack</span>
-            </div>
-            <div class="agent-stat">
-              <span class="agent-stat-label">Stack</span>
-              <span class="agent-stat-value">AWS Bedrock, Claude, TypeScript</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="agent-card">
-          <div class="agent-header">
-            <div class="agent-status-dot"></div>
-            <span class="agent-status-text">Live</span>
-          </div>
-          <h3>Rapunzel</h3>
-          <p class="agent-role">WordPress Maintenance Agent</p>
-          <p class="agent-desc">Handles plugin updates, content changes, performance optimization, and bug fixes for production e-commerce sites. From ticket intake to deployment — fully autonomous.</p>
-          <div class="agent-stats">
-            <div class="agent-stat">
-              <span class="agent-stat-label">Integrations</span>
-              <span class="agent-stat-value">Monday.com, WordPress, SSH</span>
-            </div>
-            <div class="agent-stat">
-              <span class="agent-stat-label">Stack</span>
-              <span class="agent-stat-value">AWS Bedrock, PHP, Lightsail</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="agent-card">
-          <div class="agent-header">
-            <div class="agent-status-dot"></div>
-            <span class="agent-status-text">Live</span>
-          </div>
-          <h3>Mirizan</h3>
-          <p class="agent-role">Marketing Intelligence</p>
-          <p class="agent-desc">Monitors Meta ad campaigns, generates creative assets with AI, updates production websites, and manages approval workflows. Keeps campaigns optimized around the clock.</p>
-          <div class="agent-stats">
-            <div class="agent-stat">
-              <span class="agent-stat-label">Integrations</span>
-              <span class="agent-stat-value">Meta Ads API, Gemini, S3</span>
-            </div>
-            <div class="agent-stat">
-              <span class="agent-stat-label">Stack</span>
-              <span class="agent-stat-value">Node.js, Lambda, DynamoDB</span>
-            </div>
-          </div>
+      <div class="process-img-wrap">
+        <img src="assets/images/generated/process-visual.png" alt="Gazellia command center" class="process-img">
+        <div class="process-overlay">
+          <h2>Your operations,<br><span class="text-gold">always running</span></h2>
+          <p>Agents work around the clock — writing code, optimizing campaigns, monitoring infrastructure. You get visibility into everything from a single dashboard.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- How It Works -->
-  <section class="process">
-    <div class="section-inner">
-      <div class="section-header">
-        <span class="section-tag">Process</span>
-        <h2>From concept to autonomous operation</h2>
-      </div>
-      <div class="process-timeline">
-        <div class="process-step">
-          <div class="step-marker">
-            <div class="step-dot"></div>
-            <div class="step-line"></div>
-          </div>
-          <div class="step-content">
-            <h3>Discovery</h3>
-            <p>We map your workflows, identify high-impact automation opportunities, and define what success looks like. No generic playbooks — every engagement is tailored.</p>
-          </div>
-        </div>
-        <div class="process-step">
-          <div class="step-marker">
-            <div class="step-dot"></div>
-            <div class="step-line"></div>
-          </div>
-          <div class="step-content">
-            <h3>Build & Iterate</h3>
-            <p>Rapid development cycles with weekly visibility. You see working software early and approve every major decision. We integrate directly with your existing tools — Monday.com, GitHub, Slack, Jira.</p>
-          </div>
-        </div>
-        <div class="process-step">
-          <div class="step-marker">
-            <div class="step-dot"></div>
-          </div>
-          <div class="step-content">
-            <h3>Deploy & Evolve</h3>
-            <p>Your system goes live and starts learning. AI agents accumulate knowledge from every task. Infrastructure is monitored and optimized continuously. Your software gets better without additional cost.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Results / Track Record -->
+  <!-- Results -->
   <section class="results" id="results">
     <div class="section-inner">
       <div class="section-header">
         <span class="section-tag">Track Record</span>
-        <h2>Proven at scale</h2>
-        <p class="section-desc">From startup acquisitions to enterprise partnerships — results that speak for themselves.</p>
+        <h2>Built to last. Proven at scale.</h2>
       </div>
-      <div class="results-grid">
-        <div class="result-card highlight">
-          <span class="result-tag">Acquisition</span>
-          <h3>Fyre &rarr; Bullhorn</h3>
-          <p>Built the intelligent web scraping and data enrichment engine for Fyre, a recruiting technology startup. The platform was acquired by Bullhorn and now serves thousands of customers worldwide.</p>
+      <div class="results-row">
+        <div class="result-stat">
+          <div class="result-number">1</div>
+          <div class="result-detail">
+            <strong>Product Acquired</strong>
+            <p>Built the core data enrichment engine for a recruiting tech startup — later acquired by a global enterprise serving thousands of customers worldwide.</p>
+          </div>
         </div>
-        <div class="result-card">
-          <span class="result-tag">Platform</span>
-          <h3>Cloudgate</h3>
-          <p>Co-built a full-stack recruiting platform from the ground up — candidate management, job matching, client portals, and analytics serving recruiting agencies across the country.</p>
+        <div class="result-stat">
+          <div class="result-number">7+</div>
+          <div class="result-detail">
+            <strong>Active Partnerships</strong>
+            <p>Long-term relationships with companies ranging from Fortune 100 retailers to fast-moving startups and SaaS platforms.</p>
+          </div>
         </div>
-        <div class="result-card">
-          <span class="result-tag">Enterprise</span>
-          <h3>Kroger</h3>
-          <p>Ongoing software development partnership with one of the largest grocery retailers in the United States. Enterprise-grade systems built to scale.</p>
+        <div class="result-stat">
+          <div class="result-number">13+</div>
+          <div class="result-detail">
+            <strong>Years in Production</strong>
+            <p>From AR research to startup acquisitions to enterprise-scale systems — over a decade of shipping software that works.</p>
+          </div>
         </div>
-        <div class="result-card">
-          <span class="result-tag">Innovation</span>
-          <h3>AR / Google Glass</h3>
-          <p>Early-stage augmented reality development for the Google Glass platform — before AR went mainstream. Research and prototyping at the University of Central Florida.</p>
+        <div class="result-stat">
+          <div class="result-number">24/7</div>
+          <div class="result-detail">
+            <strong>Agent Uptime</strong>
+            <p>Autonomous agents running continuously — processing tasks, optimizing spend, and deploying improvements while teams focus on strategy.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -282,51 +320,57 @@
     <div class="section-inner">
       <div class="section-header">
         <span class="section-tag">Technology</span>
-        <h2>Built on what works</h2>
-        <p class="section-desc">Production-proven tools. No hype-driven choices.</p>
+        <h2>Production-proven stack</h2>
+        <p class="section-desc">We pick tools based on what ships reliable software — not what's trending on Hacker News.</p>
       </div>
-      <div class="tech-grid">
-        <div class="tech-group">
+      <div class="tech-columns">
+        <div class="tech-col">
           <h4>AI & Intelligence</h4>
-          <div class="tech-items">
-            <span>AWS Bedrock</span>
-            <span>Claude</span>
-            <span>Gemini</span>
-            <span>Knowledge Bases</span>
-            <span>RAG Pipelines</span>
-          </div>
+          <ul>
+            <li>AWS Bedrock</li>
+            <li>Claude / Anthropic</li>
+            <li>Gemini / Google AI</li>
+            <li>OpenAI</li>
+            <li>Knowledge Bases & RAG</li>
+            <li>LangChain / Strands</li>
+            <li>Vector Databases</li>
+          </ul>
         </div>
-        <div class="tech-group">
-          <h4>Infrastructure</h4>
-          <div class="tech-items">
-            <span>AWS Lambda</span>
-            <span>EC2</span>
-            <span>S3 / CloudFront</span>
-            <span>DynamoDB</span>
-            <span>MySQL</span>
-            <span>Docker</span>
-          </div>
+        <div class="tech-col">
+          <h4>Languages & Frameworks</h4>
+          <ul>
+            <li>TypeScript / JavaScript</li>
+            <li>Python</li>
+            <li>Go</li>
+            <li>PHP</li>
+            <li>React / Next.js</li>
+            <li>React Native / Expo</li>
+            <li>Node.js / Express</li>
+          </ul>
         </div>
-        <div class="tech-group">
-          <h4>Development</h4>
-          <div class="tech-items">
-            <span>TypeScript</span>
-            <span>Node.js</span>
-            <span>React</span>
-            <span>React Native</span>
-            <span>Next.js</span>
-            <span>Expo</span>
-          </div>
+        <div class="tech-col">
+          <h4>Cloud & Infrastructure</h4>
+          <ul>
+            <li>AWS (Lambda, EC2, ECS)</li>
+            <li>S3 / CloudFront CDN</li>
+            <li>DynamoDB / MySQL</li>
+            <li>PostgreSQL / Redis</li>
+            <li>Docker / Containers</li>
+            <li>Terraform / IaC</li>
+            <li>CI/CD Pipelines</li>
+          </ul>
         </div>
-        <div class="tech-group">
-          <h4>Integrations</h4>
-          <div class="tech-items">
-            <span>Monday.com</span>
-            <span>GitHub</span>
-            <span>Meta Ads API</span>
-            <span>Slack</span>
-            <span>Webhooks</span>
-          </div>
+        <div class="tech-col">
+          <h4>Integrations & Tools</h4>
+          <ul>
+            <li>Monday.com / Jira</li>
+            <li>GitHub / GitLab</li>
+            <li>Meta Ads API</li>
+            <li>Slack / Webhooks</li>
+            <li>Stripe / Payments</li>
+            <li>WordPress / CMS</li>
+            <li>REST / GraphQL APIs</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -338,8 +382,8 @@
       <div class="cta-layout">
         <div class="cta-text">
           <img src="assets/images/horns-gold.png" alt="" class="cta-icon">
-          <h2>Let's build something<br>that runs itself</h2>
-          <p>Whether you need an autonomous agent, a smarter marketing pipeline, or a custom application — we'll show you what's possible.</p>
+          <h2>Let's build your<br>unfair advantage</h2>
+          <p>Tell us what you're working on. We'll tell you how autonomous agents can accelerate it.</p>
           <div class="cta-trust">
             <div class="trust-item">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
@@ -353,6 +397,10 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
               <span>Production-ready from day one</span>
             </div>
+            <div class="trust-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span>Agents improve over time — no extra cost</span>
+            </div>
           </div>
         </div>
         <div class="cta-form-wrap">
@@ -365,6 +413,7 @@
               <option value="ai-agents">AI Agents & Automation</option>
               <option value="ai-marketing">AI Marketing Automation</option>
               <option value="custom-software">Custom Software / App Development</option>
+              <option value="cloud">Cloud Architecture & DevOps</option>
               <option value="consulting">AI Strategy Consulting</option>
               <option value="other">Something Else</option>
             </select>
@@ -384,13 +433,13 @@
         <span>GAZELLIA</span>
       </div>
       <div class="footer-links">
-        <a href="#capabilities">Capabilities</a>
         <a href="#agents">Agents</a>
+        <a href="#capabilities">Capabilities</a>
         <a href="#results">Results</a>
         <a href="#contact">Contact</a>
       </div>
       <div class="footer-copy">
-        &copy; 2026 Gazellia Ventures LLC. All rights reserved.
+        &copy; 2026 Gazellia Ventures LLC
       </div>
     </div>
   </footer>
