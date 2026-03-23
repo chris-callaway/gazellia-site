@@ -1,0 +1,35 @@
+# Gazellia — AI-Powered Development Studio
+
+> Gazellia builds autonomous AI agents and intelligent software for businesses. We deploy agents that write code, run marketing campaigns, optimize cloud infrastructure, and perform quality assurance — operating 24/7 without human intervention.
+
+## Services
+
+- **Autonomous AI Agents**: Custom agents that integrate with project management tools (Monday.com, Jira), pick up tasks, write production code, create pull requests, respond to code review, and learn from every completed task.
+- **AI Marketing Automation**: Intelligent engines that monitor ad campaign performance, generate creative assets with AI, update production websites, and manage approval workflows.
+- **Custom Software & Apps**: Full-stack web and mobile applications using React, React Native, Node.js, TypeScript, and AWS infrastructure.
+- **Cloud Architecture & DevOps**: AWS infrastructure design, cost optimization, CI/CD pipelines, and managed operations.
+- **AI Integration & RAG**: Knowledge bases, retrieval-augmented generation pipelines, and natural language interfaces embedded into existing systems.
+
+## Technology Stack
+
+AI: AWS Bedrock, Claude, Gemini, OpenAI, LangChain, Strands, Vector Databases, RAG Pipelines
+Languages: TypeScript, JavaScript, Python, Go, PHP
+Frontend: React, React Native, Expo, Next.js
+Backend: Node.js, Express
+Cloud: AWS Lambda, EC2, ECS, S3, CloudFront, DynamoDB, MySQL, PostgreSQL, Redis, Docker, Terraform
+Integrations: Monday.com, Jira, GitHub, GitLab, Meta Ads API, Slack, Stripe, Webhooks, REST, GraphQL
+
+## Track Record
+
+- 13+ years shipping production software
+- Product acquired by Bullhorn (global enterprise, thousands of customers)
+- Active partnerships with Fortune 100 companies and fast-moving startups
+- Autonomous agents running in production 24/7
+- University of Central Florida, Computer Science, 4.0 GPA
+- Early AR development for Google Glass
+
+## Contact
+
+Website: https://gazellia.com
+Contact form: https://gazellia.com/#contact
+Location: Florida, USA
