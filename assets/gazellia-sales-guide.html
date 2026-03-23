@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gazellia — Sales Playbook & Onboarding Guide</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    @page { size: letter; margin: 0; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: #08080A; color: #F0F0F2;
+      -webkit-font-smoothing: antialiased; line-height: 1.6;
+    }
+    .page {
+      width: 8.5in; min-height: 11in; margin: 0 auto;
+      padding: 52px 60px; background: #08080A;
+      position: relative; page-break-after: always;
+    }
+    .page::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #E8B931, #C49B1A, #E8B931);
+    }
+
+    /* Header */
+    .hdr {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid #1A1A1E;
+    }
+    .hdr-logo { display: flex; align-items: center; gap: 10px; }
+    .hdr-logo img { width: 24px; }
+    .hdr-logo span { font-size: 12px; font-weight: 700; letter-spacing: 0.14em; }
+    .hdr-right { text-align: right; font-size: 10px; color: #5C5C66; }
+    .hdr-right strong { color: #9E9EA8; display: block; font-size: 11px; }
+
+    /* Typography */
+    h1 { font-size: 30px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 12px; }
+    h2 { font-size: 20px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 14px; line-height: 1.25; }
+    h3 { font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+    h4 { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: #5C5C66; margin-bottom: 14px; }
+    .gold { color: #E8B931; }
+    .subtitle { font-size: 13px; color: #9E9EA8; line-height: 1.7; margin-bottom: 24px; max-width: 500px; }
+    p { font-size: 12px; color: #9E9EA8; line-height: 1.75; margin-bottom: 12px; }
+
+    /* Cards */
+    .card {
+      background: #111114; border: 1px solid #1A1A1E; border-radius: 10px;
+      padding: 22px 26px; margin-bottom: 14px;
+    }
+    .card.gold-border { border-color: rgba(232, 185, 49, 0.25); }
+    .card h3 { color: #F0F0F2; }
+    .card p { margin-bottom: 0; }
+
+    /* Two columns */
+    .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .cols-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+
+    /* Image block */
+    .img-block {
+      border-radius: 10px; overflow: hidden; margin-bottom: 20px;
+      border: 1px solid #1A1A1E; position: relative;
+    }
+    .img-block img { width: 100%; height: 200px; object-fit: cover; display: block; }
+    .img-block.tall img { height: 260px; }
+    .img-overlay {
+      position: absolute; inset: 0; display: flex; align-items: flex-end;
+      padding: 24px;
+      background: linear-gradient(180deg, transparent 30%, rgba(8,8,10,0.85) 100%);
+    }
+    .img-overlay h2 { color: #F0F0F2; margin: 0; font-size: 22px; }
+
+    /* Callout */
+    .callout {
+      background: rgba(232, 185, 49, 0.04); border: 1px solid rgba(232, 185, 49, 0.15);
+      border-radius: 10px; padding: 18px 24px; margin-bottom: 16px;
+    }
+    .callout h3 { color: #E8B931; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; }
+    .callout p { font-size: 12px; margin-bottom: 0; }
+
+    /* Quote */
+    .quote {
+      border-left: 3px solid #E8B931; padding: 14px 20px; margin: 16px 0;
+      background: rgba(232, 185, 49, 0.03); border-radius: 0 8px 8px 0;
+    }
+    .quote p { font-size: 13px; color: #E8B931; font-style: italic; margin: 0; }
+    .quote .attr { font-size: 10px; color: #5C5C66; font-style: normal; margin-top: 6px; display: block; }
+
+    /* Script block */
+    .script {
+      background: #0C0C0F; border: 1px solid #1A1A1E; border-radius: 8px;
+      padding: 16px 20px; margin: 12px 0; font-size: 12px;
+    }
+    .script .label { font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #E8B931; margin-bottom: 8px; }
+    .script p { color: #D0D0D4; margin-bottom: 6px; }
+    .script em { color: #5C5C66; font-style: normal; }
+
+    /* Objection block */
+    .objection { margin-bottom: 14px; }
+    .objection .q { font-size: 12px; font-weight: 600; color: #F0F0F2; margin-bottom: 4px; }
+    .objection .q::before { content: '"'; color: #E8B931; }
+    .objection .q::after { content: '"'; color: #E8B931; }
+    .objection .a { font-size: 11px; color: #9E9EA8; padding-left: 16px; border-left: 2px solid #242429; line-height: 1.7; }
+
+    /* Badge */
+    .badge {
+      display: inline-block; font-size: 9px; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.08em; padding: 3px 8px; border-radius: 4px;
+      background: rgba(232, 185, 49, 0.1); color: #E8B931;
+      border: 1px solid rgba(232, 185, 49, 0.2); margin-left: 8px;
+    }
+    .badge.green { background: rgba(52,211,153,0.08); color: #34d399; border-color: rgba(52,211,153,0.2); }
+
+    /* List */
+    .checklist { list-style: none; }
+    .checklist li {
+      font-size: 12px; color: #9E9EA8; padding: 5px 0 5px 20px;
+      position: relative; line-height: 1.7;
+    }
+    .checklist li::before {
+      content: ''; position: absolute; left: 0; top: 10px;
+      width: 8px; height: 8px; border-radius: 50%; background: #C49B1A;
+    }
+
+    /* Numbered steps */
+    .step { display: flex; gap: 16px; margin-bottom: 16px; }
+    .step-num {
+      width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0;
+      background: rgba(232, 185, 49, 0.1); border: 1px solid rgba(232, 185, 49, 0.2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 700; color: #E8B931;
+    }
+    .step-content h3 { font-size: 13px; margin-bottom: 4px; }
+    .step-content p { font-size: 11px; margin-bottom: 0; }
+
+    /* Footer */
+    .pg-footer {
+      position: absolute; bottom: 36px; left: 60px; right: 60px;
+      display: flex; justify-content: space-between;
+      padding-top: 14px; border-top: 1px solid #1A1A1E;
+      font-size: 9px; color: #5C5C66;
+    }
+
+    /* Section divider */
+    .divider {
+      font-size: 10px; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.14em; color: #5C5C66; margin: 28px 0 16px;
+    }
+
+    @media print {
+      body { background: #08080A; }
+      .page { margin: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== PAGE 1: COVER ===== -->
+<div class="page" style="display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
+  <div class="page::before"></div>
+  <img src="assets/images/sales/cover.webp" alt="" style="width:180px; margin-bottom:40px; border-radius:20px;">
+  <h1 style="font-size:38px; margin-bottom:8px;">Sales Playbook</h1>
+  <p style="font-size:16px; color:#E8B931; font-weight:600; margin-bottom:4px;">Gazellia — AI-Powered Development Studio</p>
+  <p style="font-size:13px; color:#5C5C66; margin-bottom:48px;">Onboarding Guide &bull; Pitch Scripts &bull; Vertical Playbooks &bull; Objection Handling</p>
+  <div style="border-top:1px solid #1A1A1E; padding-top:20px; width:300px;">
+    <p style="font-size:11px; color:#5C5C66;">Confidential — Internal Use Only</p>
+    <p style="font-size:11px; color:#5C5C66; margin:0;">Updated March 2026</p>
+  </div>
+  <div class="pg-footer"><span>gazellia.com</span><span>Confidential</span><span></span></div>
+</div>
+
+<!-- ===== PAGE 2: WHO WE ARE ===== -->
+<div class="page">
+  <div class="hdr">
+    <div class="hdr-logo"><img src="assets/images/horns-gold.png" alt=""><span>GAZELLIA</span></div>
+    <div class="hdr-right"><strong>Sales Playbook</strong>Company Overview</div>
+  </div>
+
+  <h2>Who We Are — <span class="gold">The 60-Second Version</span></h2>
+  <p style="font-size:13px; max-width:520px; margin-bottom:24px;">Gazellia is an AI-powered development studio that builds autonomous software agents for businesses. Our agents write code, run marketing campaigns, monitor infrastructure, and perform quality assurance — operating 24/7 without human intervention. We're not a typical agency. We're cheaper, faster, and our work improves itself over time.</p>
+
+  <div class="callout">
+    <h3>The Key Differentiator</h3>
+    <p>Most AI companies sell chatbots or wrappers around ChatGPT. We deploy <strong style="color:#F0F0F2;">production agents that actually do the work</strong> — picking up tickets, writing code, creating pull requests, optimizing ad campaigns — right now, today, for real clients. This isn't a demo. It's running.</p>
+  </div>
+
+  <div class="divider">Credibility Proof Points</div>
+
+  <div class="cols">
+    <div class="card gold-border">
+      <h3>Startup Acquired by Bullhorn</h3>
+      <p>Our founder built the core web scraping and data enrichment engine for Fyre, a recruiting technology startup. Bullhorn — a global enterprise serving thousands of staffing firms — acquired the company. That technology is still powering their platform today.</p>
+    </div>
+    <div class="card">
+      <h3>Cloudgate — Co-Founded</h3>
+      <p>Built a full-stack recruiting platform from scratch. Candidate management, job matching, client portals, analytics. Serving recruiting agencies across the country. Still in production.</p>
+    </div>
+    <div class="card">
+      <h3>Fortune 100 Partnerships</h3>
+      <p>Active development partnerships with companies including Kroger, CDW, and Paro. Enterprise-grade systems built to handle real scale — not weekend projects.</p>
+    </div>
+    <div class="card">
+      <h3>13+ Years, UCF CS 4.0 GPA</h3>
+      <p>Computer Science degree from the University of Central Florida with a perfect GPA. Early AR development for Google Glass. Over a decade of shipping production software across recruiting, retail, fintech, and marketing.</p>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>When a prospect asks "Have you done this before?" — the answer is always yes, and there's a specific story to back it up.</p>
+    <span class="attr">Use the proof points above to match the prospect's industry</span>
+  </div>
+
+  <div class="pg-footer"><span>gazellia.com</span><span>Confidential — Internal Use Only</span><span>Page 2</span></div>
+</div>
+
+<!-- ===== PAGE 3: THE PITCH FRAMEWORK ===== -->
+<div class="page">
+  <div class="hdr">
+    <div class="hdr-logo"><img src="assets/images/horns-gold.png" alt=""><span>GAZELLIA</span></div>
+    <div class="hdr-right"><strong>Sales Playbook</strong>Pitch Framework</div>
+  </div>
+
+  <div class="img-block">
+    <img src="assets/images/sales/handshake.webp" alt="">
+    <div class="img-overlay"><h2>The Pitch Framework</h2></div>
+  </div>
+
+  <p style="font-size:13px; margin-bottom:24px;">Every pitch follows the same structure regardless of vertical. Adapt the examples and proof points to the prospect's industry.</p>
+
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-content">
+      <h3>Open with the Pain</h3>
+      <p>"You're paying $15-30K/month for developers — or struggling to hire. Either way, you're not moving as fast as you need to. What if your backlog worked on itself overnight?"</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-content">
+      <h3>Introduce the Agent Concept</h3>
+      <p>"We deploy AI agents that do real work — not chatbots, not copilots. Agents that pick up your tickets, write code, create pull requests, and learn from every task. They run 24/7 and get smarter over time."</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-content">
+      <h3>Prove It's Real</h3>
+      <p>"We have agents in production right now doing this for clients. One of our founders built the data engine that got acquired by Bullhorn — it powers thousands of recruiting firms today. This isn't theoretical."</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">4</div>
+    <div class="step-content">
+      <h3>Show the Economics</h3>
+      <p>"A full-time developer costs $8-15K/month. An agency charges $15-30K. Our AI dev agent is $3,500-7,500/month — and it works nights, weekends, and holidays. No PTO, no turnover, no ramp-up time."</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">5</div>
+    <div class="step-content">
+      <h3>Remove the Risk</h3>
+      <p>"Month-to-month. No long-term contract. No setup fee. All code is yours from day one. If it doesn't work, you cancel. But it will work — because it's already working for other clients right now."</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <h3>Closing Line</h3>
+    <p>"Let's do a quick discovery call this week. I'll map out exactly how an agent would fit your workflow and give you a custom proposal. 30 minutes — no commitment."</p>
+  </div>
+
+  <div class="pg-footer"><span>gazellia.com</span><span>Confidential — Internal Use Only</span><span>Page 3</span></div>
+</div>
+
+<!-- ===== PAGE 4: VERTICAL — RECRUITING ===== -->
+<div class="page">
+  <div class="hdr">
+    <div class="hdr-logo"><img src="assets/images/horns-gold.png" alt=""><span>GAZELLIA</span></div>
+    <div class="hdr-right"><strong>Sales Playbook</strong>Vertical: Recruiting & Staffing</div>
+  </div>
+
+  <div class="img-block">
+    <img src="assets/images/sales/recruiting.webp" alt="">
+    <div class="img-overlay"><h2>Recruiting & Staffing <span class="badge">High Priority</span></h2></div>
+  </div>
+
+  <div class="callout">
+    <h3>Why This Vertical Is Our Strongest</h3>
+    <p>Our founder literally built recruiting technology that got acquired by Bullhorn. We co-built Cloudgate, a full recruiting platform. We know ATS systems, candidate pipelines, compliance requirements, and the pain points of staffing firms inside and out. <strong style="color:#F0F0F2;">No competitor can match this credibility.</strong></p>
+  </div>
+
+  <div class="divider">Their Pain Points</div>
+  <ul class="checklist">
+    <li>Spending thousands on job board scraping tools that break constantly</li>
+    <li>Recruiters drowning in manual data entry — copying candidate info between systems</li>
+    <li>ATS/CRM customizations are expensive and slow through vendors like Bullhorn</li>
+    <li>Can't afford a full dev team but need custom integrations and automations</li>
+    <li>Marketing for open roles is manual and inefficient</li>
+  </ul>
+
+  <div class="divider">What We Sell Them</div>
+  <div class="cols">
+    <div class="card">
+      <h3>Data Enrichment Agent</h3>
+      <p>Automatically enrich candidate profiles with data from LinkedIn, job boards, and public sources. Same concept we built for Bullhorn — now available as a managed service.</p>
+    </div>
+    <div class="card">
+      <h3>ATS Integration Agent</h3>
+      <p>Custom integrations between their ATS (Bullhorn, JobDiva, etc.) and other tools. Automate candidate flow, sync data, eliminate double-entry.</p>
+    </div>
+    <div class="card">
+      <h3>Recruiting Marketing Agent</h3>
+      <p>AI-powered job ad creation, automated posting across platforms, candidate pipeline analytics, and A/B testing of job descriptions.</p>
+    </div>
+    <div class="card">
+      <h3>Custom Platform Development</h3>
+      <p>When off-the-shelf tools don't cut it. We built Cloudgate from scratch — we can build custom recruiting tools faster and cheaper than anyone.</p>
+    </div>
+  </div>
+
+  <div class="script">
+    <div class="label">Opening Script — Recruiting</div>
+    <p>"I'm reaching out because we specialize in AI automation for recruiting firms. Our founder actually built the data enrichment engine that Bullhorn acquired — so we know the staffing tech space inside out. I wanted to see if you're dealing with any of the manual data headaches that most firms struggle with."</p>
+  </div>
+
+  <div class="pg-footer"><span>gazellia.com</span><span>Confidential — Internal Use Only</span><span>Page 4</span></div>
+</div>
+
+<!-- ===== PAGE 5: VERTICAL — E-COMMERCE ===== -->
+<div class="page">
+  <div class="hdr">
+    <div class="hdr-logo"><img src="assets/images/horns-gold.png" alt=""><span>GAZELLIA</span></div>
+    <div class="hdr-right"><strong>Sales Playbook</strong>Vertical: E-Commerce & Retail</div>
+  </div>
+
+  <div class="img-block">
+    <img src="assets/images/sales/ecommerce.webp" alt="">
+    <div class="img-overlay"><h2>E-Commerce & Retail</h2></div>
+  </div>
+
+  <div class="divider">Their Pain Points</div>
+  <ul class="checklist">
+    <li>WordPress/Shopify sites that break with every plugin update</li>
+    <li>Ad spend growing but ROAS declining — no time to optimize creatives</li>
+    <li>Seasonal traffic spikes crash their site or spike their AWS bill</li>
+    <li>SEO and content updates are a full-time job they can't staff</li>
+    <li>Customer data scattered across 10 different tools</li>
+  </ul>
+
+  <div class="divider">What We Sell Them</div>
+  <div class="cols">
+    <div class="card">
+      <h3>WordPress Maintenance Agent</h3>
+      <p>Autonomous plugin updates, security patches, content changes, and performance optimization. We already run this for production e-commerce sites — proven and stable.</p>
+    </div>
+    <div class="card">
+      <h3>AI Marketing Agent</h3>
+      <p>Monitors their Meta/Google ad campaigns, generates creative variations, optimizes budget allocation, and updates landing pages — all with approval workflows.</p>
+    </div>
+    <div class="card">
+      <h3>Infrastructure Monitoring</h3>
+      <p>Prevent site crashes before they happen. Cost anomaly detection, auto-scaling configuration, and 24/7 health monitoring.</p>
+    </div>
+    <div class="card">
+      <h3>Custom E-Commerce Features</h3>
+      <p>AI-powered product recommendations, intelligent search, inventory forecasting, or custom checkout flows — built on their existing platform.</p>
+    </div>
+  </div>
+
+  <div class="script">
+    <div class="label">Opening Script — E-Commerce</div>
+    <p>"I noticed your site runs on WordPress — we specialize in AI-powered e-commerce automation. We have an agent that handles all your site maintenance autonomously — plugin updates, security, content changes — plus a marketing agent that optimizes your ad campaigns 24/7. Most of our e-commerce clients save 60-70% compared to their current agency. Would it be worth a 20-minute call to see how this fits?"</p>
+  </div>
+
+  <div class="callout">
+    <h3>Proof Point</h3>
+    <p>We actively run a WordPress maintenance agent on a production e-commerce site right now. It handles tickets from intake to deployment — fully autonomous. We've also partnered with Kroger on enterprise retail systems.</p>
+  </div>
+
+  <div class="pg-footer"><span>gazellia.com</span><span>Confidential — Internal Use Only</span><span>Page 5</span></div>
+</div>
+
+<!-- ===== PAGE 6: VERTICAL — SAAS & STARTUPS ===== -->
+<div class="page">
+  <div class="hdr">
+    <div class="hdr-logo"><img src="assets/images/horns-gold.png" alt=""><span>GAZELLIA</span></div>
+    <div class="hdr-right"><strong>Sales Playbook</strong>Vertical: SaaS & Startups</div>
+  </div>
+
+  <div class="img-block">
+    <img src="assets/images/sales/saas.webp" alt="">
+    <div class="img-overlay"><h2>SaaS & Startups</h2></div>
+  </div>
+
+  <div class="divider">Their Pain Points</div>
+  <ul class="checklist">
+    <li>Burning runway on full-time developers they may not need long-term</li>
+    <li>Backlog growing faster than the team can ship</li>
+    <li>QA is manual, flaky, and slowing down releases</li>
+    <li>AWS bill is growing and nobody's optimizing it</li>
+    <li>Need to move fast but can't sacrifice code quality</li>
+  </ul>
+
+  <div class="divider">What We Sell Them</div>
+  <div class="cols">
+    <div class="card gold-border">
+      <h3>AI Dev Agent <span class="badge">Best Fit</span></h3>
+      <p>Their highest-ROI play. An AI developer that works through their backlog 24/7 — picking up Jira/Linear tickets, writing code, creating PRs, responding to review. Like adding a mid-level dev for a fraction of the cost.</p>
+    </div>
+    <div class="card">
+      <h3>QA & Testing Agent</h3>
+      <p>Generate test cases from specs, run regression suites, catch flaky tests, and validate deploys before production. Integrates with their CI/CD pipeline.</p>
+    </div>
+    <div class="card">
+      <h3>Infrastructure Agent</h3>
+      <p>Monitor their AWS environment, catch cost anomalies early, auto-remediate common issues, and deliver monthly optimization reports.</p>
+    </div>
+    <div class="card">
+      <h3>MVP / Feature Development</h3>
+      <p>Need to ship a new feature or build an MVP fast? Our hourly rate ($100-150/hr) is 40-60% below typical agencies, and we can pair with AI agents to accelerate delivery.</p>
+    </div>
+  </div>
+
+  <div class="script">
+    <div class="label">Opening Script — SaaS</div>
+    <p>"Hey — I see you're building [product name]. We help SaaS companies ship faster by deploying AI dev agents that work through your backlog autonomously. Imagine waking up to pull requests that were written overnight on your Jira tickets. We're about 50-70% cheaper than hiring or an agency, and there's no contract. Worth a quick chat?"</p>
+  </div>
+
+  <div class="pg-footer"><span>gazellia.com</span><span>Confidential — Internal Use Only</span><span>Page 6</span></div>
+</div>
+
+<!-- ===== PAGE 7: VERTICAL — AGENCIES ===== -->
+<div class="page">
+  <div class="hdr">
+    <div class="hdr-logo"><img src="assets/images/horns-gold.png" alt=""><span>GAZELLIA</span></div>
+    <div class="hdr-right"><strong>Sales Playbook</strong>Vertical: Agencies & Consultancies</div>
+  </div>
+
+  <div class="img-block">
+    <img src="assets/images/sales/agency.webp" alt="">
+    <div class="img-overlay"><h2>Agencies & Consultancies</h2></div>
+  </div>
+
+  <div class="divider">Their Pain Points</div>
+  <ul class="checklist">
+    <li>Client projects piling up but can't hire fast enough to scale</li>
+    <li>Margins squeezed by rising developer salaries</li>
+    <li>Maintenance contracts eating into new project bandwidth</li>
+    <li>Clients asking about AI but the agency doesn't have AI expertise</li>
+    <li>Offshore contractors are unreliable and require heavy management</li>
+  </ul>
+
+  <div class="divider">What We Sell Them</div>
+  <div class="cols">
+    <div class="card gold-border">
+      <h3>White-Label AI Agents</h3>
+      <p>Agencies can resell our agents under their own brand. They charge their client $10K/mo, pay us $4K/mo, and pocket $6K in margin — with zero additional headcount. We handle all the infrastructure.</p>
+    </div>
+    <div class="card">
+      <h3>Overflow Development</h3>
+      <p>When they're at capacity, we take on projects at $100-150/hr — below what they'd pay most subcontractors. Our AI-accelerated delivery means faster turnaround.</p>
+    </div>
+    <div class="card">
+      <h3>Managed Maintenance</h3>
+      <p>We take their maintenance contracts off their plate. AI agents handle the routine work (updates, bug fixes, monitoring) so the agency can focus on new revenue.</p>
+    </div>
+    <div class="card">
+      <h3>AI Capability Add-On</h3>
+      <p>Help them offer AI services to their clients without building AI expertise in-house. We build it, they sell it, everyone wins.</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <h3>The Agency Play — This Is Big</h3>
+    <p>The white-label opportunity is the highest-leverage sale. One agency partner with 5 clients using our agents = $20K/mo recurring for us with minimal marginal cost. <strong style="color:#F0F0F2;">Target agencies with 10-50 employees who are feeling the AI pressure but don't have the in-house talent to deliver it.</strong></p>
+  </div>
+
+  <div class="pg-footer"><span>gazellia.com</span><span>Confidential — Internal Use Only</span><span>Page 7</span></div>
+</div>
+
+<!-- ===== PAGE 8: OBJECTION HANDLING ===== -->
+<div class="page">
+  <div class="hdr">
+    <div class="hdr-logo"><img src="assets/images/horns-gold.png" alt=""><span>GAZELLIA</span></div>
+    <div class="hdr-right"><strong>Sales Playbook</strong>Objection Handling</div>
+  </div>
+
+  <h2>Objection Handling <span class="gold">Cheat Sheet</span></h2>
+  <p style="margin-bottom:24px;">Every objection is a buying signal. Here's how to handle the most common ones.</p>
+
+  <div class="objection">
+    <div class="q">AI can't write production-quality code</div>
+    <div class="a">It already is — for our current clients, right now. Our agents don't just generate code blindly. They understand the codebase, follow existing patterns, create proper pull requests, and respond to code review feedback. They also learn from every task, so they get better over time. We built the engine that Bullhorn acquired — we know how to ship production software.</div>
+  </div>
+
+  <div class="objection">
+    <div class="q">We tried Copilot / ChatGPT and it wasn't good enough</div>
+    <div class="a">Copilot is an autocomplete tool. ChatGPT is a chatbot. Our agents are autonomous workers. The difference is like comparing a spell-checker to a full-time writer. Our agents pick up tickets, clone repos, write code, create PRs, and iterate on feedback — without anyone sitting in front of a screen prompting them.</div>
+  </div>
+
+  <div class="objection">
+    <div class="q">What about security? We can't have AI touching our codebase</div>
+    <div class="a">All code goes through your normal PR review process — nothing gets merged without human approval. The agent runs on our managed infrastructure (or yours if you prefer). We can sign an NDA and work within your security requirements. Our agents are already trusted with production codebases for enterprise clients.</div>
+  </div>
+
+  <div class="objection">
+    <div class="q">This sounds too cheap — what's the catch?</div>
+    <div class="a">No catch. We can charge less because AI dramatically reduces our cost to deliver. Traditional agencies have 10 developers billing $200/hr each. We have AI agents doing the repetitive work and senior engineers handling the complex decisions. Our margins are healthy — we're just sharing the efficiency gains with you instead of keeping them all.</div>
+  </div>
+
+  <div class="objection">
+    <div class="q">We'd rather hire a full-time developer</div>
+    <div class="a">A mid-level developer costs $8-15K/month including benefits, takes 2-3 months to ramp up, needs management, takes PTO, and might leave in a year. Our agent is $3,500-7,500/month, starts producing on day one, works 24/7, never quits, and gets smarter over time. You also cancel month-to-month. Try getting that flexibility with a full-time hire.</div>
+  </div>
+
+  <div class="objection">
+    <div class="q">Can we do a trial / pilot first?</div>
+    <div class="a">Absolutely. That's actually how we prefer to start. Pick your 3-5 highest-priority tickets and we'll have our agent work through them. You'll see real PRs in your repo within the first week. No long-term commitment — if it doesn't deliver, you cancel.</div>
+  </div>
+
+  <div class="objection">
+    <div class="q">We already have an agency</div>
+    <div class="a">We're not asking you to fire them. Start with one agent alongside your current team. If our dev agent costs $4K/month and handles the work of a $12K/month developer on your agency's bill — you'll know pretty quickly which is the better deal. We often work alongside existing teams.</div>
+  </div>
+
+  <div class="pg-footer"><span>gazellia.com</span><span>Confidential — Internal Use Only</span><span>Page 8</span></div>
+</div>
+
+<!-- ===== PAGE 9: SALES PROCESS ===== -->
+<div class="page">
+  <div class="hdr">
+    <div class="hdr-logo"><img src="assets/images/horns-gold.png" alt=""><span>GAZELLIA</span></div>
+    <div class="hdr-right"><strong>Sales Playbook</strong>Sales Process & Onboarding</div>
+  </div>
+
+  <div class="img-block">
+    <img src="assets/images/sales/pipeline.webp" alt="">
+    <div class="img-overlay"><h2>Sales Process</h2></div>
+  </div>
+
+  <div class="divider">The Pipeline</div>
+
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-content">
+      <h3>Outreach / Inbound</h3>
+      <p>Lead comes in via gazellia.com contact form, cold outreach (LinkedIn, email), or referral. Qualify: Do they have a dev team or agency? What's their monthly spend? What tools do they use (Monday.com, Jira, GitHub)?</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-content">
+      <h3>Discovery Call (30 min)</h3>
+      <p>Understand their workflow, pain points, and current spend. Map out where an agent would fit. Use the vertical playbook for their industry. Don't pitch pricing yet — focus on the problem.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-content">
+      <h3>Custom Proposal</h3>
+      <p>Send the pricing PDF (Services & Pricing doc) with a custom cover note tailored to their specific use case. Highlight the cost comparison vs. their current approach. Include a recommended agent package.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">4</div>
+    <div class="step-content">
+      <h3>Pilot / Close</h3>
+      <p>Offer a pilot: 3-5 tickets for the agent to work through in the first week. No contract for the pilot — just month-to-month. Once they see real PRs landing in their repo, the close happens naturally.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">5</div>
+    <div class="step-content">
+      <h3>Onboarding (Week 1)</h3>
+      <p>Get access to their repo (GitHub/GitLab), project board (Monday.com/Jira), and Slack. Configure the agent. First tickets processed within 24-48 hours. Weekly check-in call for the first month.</p>
+    </div>
+  </div>
+
+  <div class="divider">Qualification Checklist</div>
+  <div class="cols">
+    <div class="card">
+      <h3 style="color:#34d399;">Green Flags</h3>
+      <ul class="checklist">
+        <li>Already using Monday.com, Jira, or Linear</li>
+        <li>Spending $5K+/mo on developers or agency</li>
+        <li>Growing backlog they can't keep up with</li>
+        <li>Asking about AI — curious but unsure where to start</li>
+        <li>Previous bad experience with offshore devs</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 style="color:#ef4444;">Red Flags</h3>
+      <ul class="checklist">
+        <li>Budget under $2K/month</li>
+        <li>No existing codebase (need strategy, not agents)</li>
+        <li>Want to "try AI" with no clear use case</li>
+        <li>Decision requires 6+ stakeholders / committee</li>
+        <li>Expecting 100% autonomous with zero oversight</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="pg-footer"><span>gazellia.com</span><span>Confidential — Internal Use Only</span><span>Page 9</span></div>
+</div>
+
+<!-- ===== PAGE 10: QUICK REFERENCE ===== -->
+<div class="page">
+  <div class="hdr">
+    <div class="hdr-logo"><img src="assets/images/horns-gold.png" alt=""><span>GAZELLIA</span></div>
+    <div class="hdr-right"><strong>Sales Playbook</strong>Quick Reference Card</div>
+  </div>
+
+  <h2>Quick Reference <span class="gold">Cheat Sheet</span></h2>
+  <p style="margin-bottom:24px;">Print this page and keep it at your desk.</p>
+
+  <div class="divider">Pricing At a Glance</div>
+  <div class="cols-3">
+    <div class="card gold-border" style="text-align:center;">
+      <h3>AI Dev Agent</h3>
+      <p style="font-size:18px; color:#E8B931; font-weight:800;">$3,500–7,500/mo</p>
+      <p style="font-size:10px;">vs. $8-15K hire / $15-30K agency</p>
+    </div>
+    <div class="card" style="text-align:center;">
+      <h3>Marketing Agent</h3>
+      <p style="font-size:18px; color:#E8B931; font-weight:800;">$2,000–5,000/mo</p>
+      <p style="font-size:10px;">vs. $5-15K agency</p>
+    </div>
+    <div class="card" style="text-align:center;">
+      <h3>Custom Dev</h3>
+      <p style="font-size:18px; color:#E8B931; font-weight:800;">$100–150/hr</p>
+      <p style="font-size:10px;">vs. $175-300/hr agency</p>
+    </div>
+  </div>
+
+  <div class="divider">Elevator Pitches by Vertical</div>
+  <div class="card">
+    <h3>Recruiting</h3>
+    <p>"We built the tech Bullhorn acquired. Now we build AI agents that automate data enrichment, ATS integrations, and recruiting marketing — for a fraction of what you'd pay a dev shop."</p>
+  </div>
+  <div class="card">
+    <h3>E-Commerce</h3>
+    <p>"We run AI agents that maintain your site, optimize your ads, and monitor your infrastructure — 24/7, fully autonomous. Most e-commerce clients save 60-70% vs. their current agency."</p>
+  </div>
+  <div class="card">
+    <h3>SaaS / Startups</h3>
+    <p>"Imagine waking up to pull requests on your Jira tickets that were written overnight. Our AI dev agent works through your backlog 24/7 for less than half the cost of a hire."</p>
+  </div>
+  <div class="card">
+    <h3>Agencies</h3>
+    <p>"White-label our AI agents under your brand. You charge your clients $10K, pay us $4K, keep $6K — with zero additional headcount. We handle all the infrastructure."</p>
+  </div>
+
+  <div class="divider">Key Differentiators to Memorize</div>
+  <div class="cols">
+    <ul class="checklist">
+      <li><strong style="color:#F0F0F2;">Production agents running right now</strong> — not demos</li>
+      <li><strong style="color:#F0F0F2;">Startup acquired by Bullhorn</strong> — proven track record</li>
+      <li><strong style="color:#F0F0F2;">50-70% cheaper</strong> than agencies or full-time hires</li>
+    </ul>
+    <ul class="checklist">
+      <li><strong style="color:#F0F0F2;">Month-to-month, cancel anytime</strong> — zero risk</li>
+      <li><strong style="color:#F0F0F2;">Agents get smarter over time</strong> — improving ROI</li>
+      <li><strong style="color:#F0F0F2;">All code is the client's IP</strong> — full transparency</li>
+    </ul>
+  </div>
+
+  <div class="pg-footer"><span>gazellia.com</span><span>Confidential — Internal Use Only</span><span>Page 10</span></div>
+</div>
+
+</body>
+</html>
