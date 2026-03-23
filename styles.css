@@ -341,10 +341,59 @@ h4 {
   color: var(--gold-dim); font-weight: 500;
 }
 
+/* ---- AgentCore ---- */
+.agentcore {
+  padding: 120px 0;
+  background: var(--bg-elevated);
+}
+.agentcore-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+.agentcore-desc {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-top: 16px;
+}
+.agentcore-features {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.ac-feature {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.ac-icon {
+  width: 36px; height: 36px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--gold-subtle);
+  border-radius: var(--radius-sm);
+  color: var(--gold);
+}
+.ac-icon svg { width: 18px; height: 18px; }
+.ac-feature strong {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 3px;
+}
+.ac-feature span {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .agentcore-layout { grid-template-columns: 1fr; gap: 32px; }
+}
+
 /* ---- Capabilities ---- */
 .capabilities {
   padding: 120px 0;
-  background: var(--bg-elevated);
 }
 .cap-grid {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
