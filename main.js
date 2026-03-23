@@ -40,20 +40,42 @@ if (tickerInner) {
 }
 
 // ---- Contact form ----
-document.getElementById('contactForm').addEventListener('submit', (e) => {
+const CONTACT_API = 'https://mbp3znutrjhiq4khw6we3moyr40igqgz.lambda-url.us-east-1.on.aws/';
+
+document.getElementById('contactForm').addEventListener('submit', async (e) => {
   e.preventDefault();
   const form = e.target;
-  const d = Object.fromEntries(new FormData(form));
-  const subject = encodeURIComponent(`Gazellia inquiry from ${d.name} — ${d.interest}`);
-  const body = encodeURIComponent(
-    `Name: ${d.name}\nEmail: ${d.email}\nCompany: ${d.company || 'N/A'}\nInterest: ${d.interest}\n\nMessage:\n${d.message}`
-  );
-  window.location.href = `mailto:chris@gazellia.com?subject=${subject}&body=${body}`;
   const btn = form.querySelector('button[type="submit"]');
   const orig = btn.textContent;
-  btn.textContent = 'Sent!';
-  btn.style.background = '#34d399';
-  setTimeout(() => { btn.textContent = orig; btn.style.background = ''; form.reset(); }, 3000);
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  try {
+    const data = Object.fromEntries(new FormData(form));
+    const res = await fetch(CONTACT_API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+
+    if (res.ok) {
+      btn.textContent = 'Message Sent!';
+      btn.style.background = '#34d399';
+      form.reset();
+    } else {
+      btn.textContent = 'Error — try again';
+      btn.style.background = '#ef4444';
+    }
+  } catch {
+    btn.textContent = 'Error — try again';
+    btn.style.background = '#ef4444';
+  }
+
+  setTimeout(() => {
+    btn.textContent = orig;
+    btn.style.background = '';
+    btn.disabled = false;
+  }, 3000);
 });
 
 // ---- Smooth scroll ----
