@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gazellia — Services & Pricing</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    @page { size: letter; margin: 0; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: #08080A; color: #F0F0F2;
+      -webkit-font-smoothing: antialiased; line-height: 1.5;
+    }
+    .page {
+      width: 8.5in; min-height: 11in; margin: 0 auto;
+      padding: 50px 58px; background: #08080A;
+      position: relative; page-break-after: always;
+    }
+    .page::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, #E8B931, #C49B1A, #E8B931);
+    }
+    .hdr {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 36px; padding-bottom: 18px; border-bottom: 1px solid #1A1A1E;
+    }
+    .hdr-logo { display: flex; align-items: center; gap: 10px; }
+    .hdr-logo img { width: 24px; }
+    .hdr-logo span { font-size: 12px; font-weight: 700; letter-spacing: 0.14em; }
+    .hdr-right { text-align: right; font-size: 10px; color: #5C5C66; }
+    .hdr-right strong { color: #9E9EA8; display: block; font-size: 11px; }
+
+    h1 { font-size: 28px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 10px; }
+    h2 { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 12px; }
+    h3 { font-size: 13px; font-weight: 700; margin-bottom: 6px; }
+    h4 { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: #5C5C66; margin-bottom: 12px; }
+    .gold { color: #E8B931; }
+    p { font-size: 11.5px; color: #9E9EA8; line-height: 1.7; margin-bottom: 10px; }
+
+    .subtitle { font-size: 12.5px; color: #9E9EA8; line-height: 1.7; margin-bottom: 20px; max-width: 500px; }
+
+    .card {
+      background: #111114; border: 1px solid #1A1A1E; border-radius: 10px;
+      padding: 22px 24px; margin-bottom: 12px;
+    }
+    .card.gold-border { border-color: rgba(232, 185, 49, 0.25); }
+    .card.gold-border::before {
+      content: ''; display: block; width: 100%; height: 2px; margin: -22px -24px 16px;
+      width: calc(100% + 48px);
+      background: linear-gradient(90deg, #E8B931, transparent);
+      border-radius: 10px 10px 0 0;
+    }
+
+    .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .cols-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+
+    .callout {
+      background: rgba(232, 185, 49, 0.04); border: 1px solid rgba(232, 185, 49, 0.15);
+      border-radius: 10px; padding: 16px 22px; margin-bottom: 14px;
+    }
+    .callout h3 { color: #E8B931; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; }
+    .callout p { font-size: 11.5px; margin-bottom: 0; }
+
+    .divider {
+      font-size: 10px; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.14em; color: #5C5C66; margin: 24px 0 14px;
+    }
+
+    /* Pricing tiers */
+    .tier {
+      background: #111114; border: 1px solid #1A1A1E; border-radius: 12px;
+      padding: 24px 26px; margin-bottom: 14px; position: relative;
+    }
+    .tier.recommended {
+      border-color: rgba(232, 185, 49, 0.3);
+      box-shadow: 0 0 30px rgba(232, 185, 49, 0.04);
+    }
+    .tier-top {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      margin-bottom: 10px;
+    }
+    .tier-name { font-size: 16px; font-weight: 700; }
+    .tier-price { text-align: right; }
+    .tier-price .amount { font-size: 20px; font-weight: 800; color: #E8B931; }
+    .tier-price .period { font-size: 10px; color: #5C5C66; display: block; }
+    .tier-desc { font-size: 11.5px; color: #9E9EA8; margin-bottom: 14px; line-height: 1.7; }
+
+    .tier-features {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4px 20px;
+    }
+    .feat {
+      font-size: 11px; color: #9E9EA8; padding: 4px 0 4px 16px;
+      position: relative; line-height: 1.6;
+    }
+    .feat::before {
+      content: ''; position: absolute; left: 0; top: 9px;
+      width: 6px; height: 6px; border-radius: 50%; background: #C49B1A;
+    }
+    .feat.human::before { background: #34d399; }
+    .feat strong { color: #F0F0F2; }
+
+    .badge {
+      display: inline-block; font-size: 8px; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.08em; padding: 3px 8px; border-radius: 4px;
+      background: rgba(232, 185, 49, 0.1); color: #E8B931;
+      border: 1px solid rgba(232, 185, 49, 0.2); margin-left: 8px; vertical-align: middle;
+    }
+    .badge.green { background: rgba(52,211,153,0.08); color: #34d399; border-color: rgba(52,211,153,0.2); }
+
+    .comparison {
+      background: rgba(232, 185, 49, 0.04); border: 1px solid rgba(232, 185, 49, 0.12);
+      border-radius: 10px; padding: 18px 24px; margin: 20px 0;
+    }
+    .comparison h3 { font-size: 11px; font-weight: 700; margin-bottom: 10px; color: #E8B931; text-transform: uppercase; letter-spacing: 0.08em; }
+    .comp-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 14px; }
+    .comp-col { text-align: center; }
+    .comp-col .label { font-size: 9px; color: #5C5C66; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
+    .comp-col .value { font-size: 14px; font-weight: 700; }
+    .comp-col .value.strike { color: #5C5C66; text-decoration: line-through; }
+    .comp-col .value.ours { color: #E8B931; }
+
+    .legend { font-size: 10px; color: #5C5C66; margin-top: 12px; display: flex; gap: 20px; }
+    .legend-item { display: flex; align-items: center; gap: 6px; }
+    .legend-dot { width: 6px; height: 6px; border-radius: 50%; }
+    .legend-dot.gold { background: #C49B1A; }
+    .legend-dot.green { background: #34d399; }
+
+    .notes {
+      margin-top: 20px; padding: 16px 20px; background: #0C0C0F;
+      border-radius: 8px; border: 1px solid #1A1A1E;
+    }
+    .notes h3 { font-size: 11px; font-weight: 600; margin-bottom: 8px; }
+    .notes ul { list-style: none; }
+    .notes li {
+      font-size: 10.5px; color: #9E9EA8; padding: 3px 0 3px 14px;
+      position: relative; line-height: 1.7;
+    }
+    .notes li::before { content: '—'; position: absolute; left: 0; color: #5C5C66; }
+
+    .addons { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .addon {
+      background: #111114; border: 1px solid #1A1A1E; border-radius: 10px;
+      padding: 18px 22px;
+    }
+    .addon-name { font-size: 12px; font-weight: 600; margin-bottom: 3px; }
+    .addon-price { font-size: 11px; color: #E8B931; font-weight: 600; margin-bottom: 5px; }
+    .addon-desc { font-size: 10.5px; color: #5C5C66; line-height: 1.6; }
+
+    .pg-footer {
+      position: absolute; bottom: 36px; left: 58px; right: 58px;
+      display: flex; justify-content: space-between;
+      padding-top: 12px; border-top: 1px solid #1A1A1E;
+      font-size: 9px; color: #5C5C66;
+    }
+
+    @media print { body { background: #08080A; } .page { margin: 0; } }
+  </style>
+</head>
+<body>
+
+<!-- ===== PAGE 1: POSITIONING & AGENT TIERS ===== -->
+<div class="page">
+  <div class="hdr">
+    <div class="hdr-logo"><img src="images/horns-gold.png" alt=""><span>GAZELLIA</span></div>
+    <div class="hdr-right"><strong>Services & Pricing</strong>Confidential</div>
+  </div>
+
+  <h1>AI agents + senior engineers.<br><span class="gold">Not one or the other.</span></h1>
+  <p class="subtitle">Our AI agents handle the volume — routine tickets, bug fixes, feature additions, maintenance. Our senior engineers review every pull request, handle complex architecture, and step in when a task requires human judgment. You get the speed and cost of AI with the quality guarantee of experienced developers.</p>
+
+  <div class="callout">
+    <h3>How It Actually Works</h3>
+    <p>Think of our AI agents as tireless junior developers. They work 24/7, they're fast, and they get smarter with every ticket. But just like any junior dev, they need <strong style="color:#F0F0F2;">senior oversight</strong>. Every PR is reviewed by a real engineer before it touches your codebase. Complex tickets — deep architecture changes, nuanced UI work, tricky integrations — get escalated to our human engineering team automatically.</p>
+  </div>
+
+  <div class="comparison">
+    <h3>Cost Comparison — AI Dev Agent vs. Alternatives</h3>
+    <div class="comp-grid">
+      <div class="comp-col">
+        <div class="label">Junior Developer</div>
+        <div class="value strike">$5,000–8,000/mo</div>
+      </div>
+      <div class="comp-col">
+        <div class="label">Mid-Level Developer</div>
+        <div class="value strike">$8,000–15,000/mo</div>
+      </div>
+      <div class="comp-col">
+        <div class="label">Dev Agency</div>
+        <div class="value strike">$15,000–30,000/mo</div>
+      </div>
+      <div class="comp-col">
+        <div class="label">Gazellia Agent + Engineer</div>
+        <div class="value ours">$3,000–10,000/mo</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider">AI Development Agent — Choose Your Plan</div>
+
+  <!-- Tier 1 -->
+  <div class="tier">
+    <div class="tier-top">
+      <div class="tier-name">Launchpad</div>
+      <div class="tier-price">
+        <span class="amount">$3,000</span>
+        <span class="period">per month</span>
+      </div>
+    </div>
+    <div class="tier-desc">AI agent handles your tickets autonomously. Internal QA before every PR. Best for teams that have their own senior devs to review and merge.</div>
+    <div class="tier-features">
+      <div class="feat">AI agent picks up tickets 24/7</div>
+      <div class="feat">Automated PR creation</div>
+      <div class="feat">Internal QA before delivery</div>
+      <div class="feat">Self-improving knowledge base</div>
+      <div class="feat">Monday.com / Jira integration</div>
+      <div class="feat">Slack notifications</div>
+      <div class="feat">Up to 30 tickets/month</div>
+      <div class="feat">Your team reviews & merges</div>
+    </div>
+  </div>
+
+  <!-- Tier 2 -->
+  <div class="tier recommended">
+    <div class="tier-top">
+      <div class="tier-name">Professional <span class="badge">Recommended</span></div>
+      <div class="tier-price">
+        <span class="amount">$5,500</span>
+        <span class="period">per month</span>
+      </div>
+    </div>
+    <div class="tier-desc">Everything in Launchpad, plus a <strong style="color:#F0F0F2;">senior Gazellia engineer reviews every PR</strong> before it reaches your repo. Complex tickets that exceed agent capability are escalated and handled by our engineering team.</div>
+    <div class="tier-features">
+      <div class="feat">Everything in Launchpad</div>
+      <div class="feat human"><strong>Senior engineer PR review</strong></div>
+      <div class="feat human"><strong>Complex ticket escalation</strong></div>
+      <div class="feat">Architecture guidance</div>
+      <div class="feat">Up to 50 tickets/month</div>
+      <div class="feat human">10 hours/mo senior dev time</div>
+      <div class="feat">Multi-repo support</div>
+      <div class="feat">Bi-weekly strategy call</div>
+    </div>
+  </div>
+
+  <!-- Tier 3 -->
+  <div class="tier">
+    <div class="tier-top">
+      <div class="tier-name">Enterprise</div>
+      <div class="tier-price">
+        <span class="amount">$8,500 – $12,000</span>
+        <span class="period">per month</span>
+      </div>
+    </div>
+    <div class="tier-desc">Full AI + human engineering team. Agent handles volume, senior engineers handle complexity. For active product development where quality, speed, and architecture all matter.</div>
+    <div class="tier-features">
+      <div class="feat">Everything in Professional</div>
+      <div class="feat human"><strong>Dedicated senior engineer</strong></div>
+      <div class="feat human"><strong>25-40 hrs/mo senior dev time</strong></div>
+      <div class="feat human"><strong>Complex UI/UX implementation</strong></div>
+      <div class="feat">Unlimited agent tickets</div>
+      <div class="feat">Architecture & design reviews</div>
+      <div class="feat">Weekly strategy call</div>
+      <div class="feat">Priority support & SLA</div>
+    </div>
+  </div>
+
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot gold"></div> AI agent capability</div>
+    <div class="legend-item"><div class="legend-dot green"></div> Human engineer involvement</div>
+  </div>
+
+  <div class="pg-footer"><span>gazellia.com</span><span>Confidential — Do not distribute</span><span>Page 1 of 3</span></div>
+</div>
+
+<!-- ===== PAGE 2: WHAT AGENTS CAN / CAN'T DO + OTHER SERVICES ===== -->
+<div class="page">
+  <div class="hdr">
+    <div class="hdr-logo"><img src="images/horns-gold.png" alt=""><span>GAZELLIA</span></div>
+    <div class="hdr-right"><strong>Services & Pricing</strong>Agent Capabilities & Other Services</div>
+  </div>
+
+  <h2>What agents handle vs. <span class="gold">what humans handle</span></h2>
+  <p style="margin-bottom:20px;">Transparency is part of the product. Here's exactly what our AI agents are great at, and where our senior engineers step in.</p>
+
+  <div class="cols">
+    <div class="card">
+      <h3 style="color:#E8B931;">Agents Excel At</h3>
+      <div class="feat">Bug fixes & patches</div>
+      <div class="feat">Feature additions to existing patterns</div>
+      <div class="feat">API endpoint creation</div>
+      <div class="feat">Database queries & migrations</div>
+      <div class="feat">Unit & integration tests</div>
+      <div class="feat">Refactoring & code cleanup</div>
+      <div class="feat">Documentation updates</div>
+      <div class="feat">Dependency upgrades</div>
+      <div class="feat">WordPress/CMS maintenance</div>
+      <div class="feat">Config & environment changes</div>
+    </div>
+    <div class="card">
+      <h3 style="color:#34d399;">Engineers Step In For</h3>
+      <div class="feat human">Complex UI/UX implementation</div>
+      <div class="feat human">Visual design work (canvas, image editing)</div>
+      <div class="feat human">Architecture decisions & system design</div>
+      <div class="feat human">Performance-critical optimization</div>
+      <div class="feat human">Security-sensitive code</div>
+      <div class="feat human">Third-party API debugging</div>
+      <div class="feat human">Legacy system migrations</div>
+      <div class="feat human">Client-facing demos & walkthroughs</div>
+      <div class="feat human">PR review on all agent output</div>
+      <div class="feat human">Escalated tickets beyond agent scope</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <h3>The Escalation Flow</h3>
+    <p>Agent attempts ticket → If it can't complete it or confidence is low, it flags it for human escalation → Senior engineer picks it up, completes the work, and the agent <strong style="color:#F0F0F2;">learns from the solution</strong> for next time. Over time, fewer tickets need escalation.</p>
+  </div>
+
+  <div class="divider">Other Services</div>
+
+  <div class="tier">
+    <div class="tier-top">
+      <div class="tier-name">AI Marketing Automation</div>
+      <div class="tier-price">
+        <span class="amount">$2,000 – $5,000</span>
+        <span class="period">per month</span>
+      </div>
+    </div>
+    <div class="tier-desc">AI marketing agent monitors ad campaigns, generates creative, updates landing pages, and optimizes spend — with human approval before anything goes live. Ad spend is separate.</div>
+    <div class="tier-features">
+      <div class="feat">Meta / Google Ads integration</div>
+      <div class="feat">AI-generated creative & copy</div>
+      <div class="feat">A/B testing automation</div>
+      <div class="feat">Landing page management</div>
+      <div class="feat">Human approval workflows</div>
+      <div class="feat">Budget optimization</div>
+      <div class="feat">Performance dashboards</div>
+      <div class="feat">Monthly strategy review</div>
+    </div>
+  </div>
+
+  <div class="tier">
+    <div class="tier-top">
+      <div class="tier-name">Custom Software Development</div>
+      <div class="tier-price">
+        <span class="amount">$100 – $150</span>
+        <span class="period">per hour / or project-based</span>
+      </div>
+    </div>
+    <div class="tier-desc">Full-stack web and mobile applications. React, React Native, Node.js, TypeScript, Python, AWS. Project-based or retainer. AI-accelerated delivery means faster turnaround than traditional agencies.</div>
+    <div class="tier-features">
+      <div class="feat">Web apps (React, Next.js)</div>
+      <div class="feat">Mobile apps (React Native / Expo)</div>
+      <div class="feat">API design & development</div>
+      <div class="feat">AWS infrastructure setup</div>
+      <div class="feat">Database architecture</div>
+      <div class="feat">CI/CD pipeline config</div>
+      <div class="feat">Third-party integrations</div>
+      <div class="feat">Project-based pricing available</div>
+    </div>
+  </div>
+
+  <div class="pg-footer"><span>gazellia.com</span><span>Confidential — Do not distribute</span><span>Page 2 of 3</span></div>
+</div>
+
+<!-- ===== PAGE 3: ADD-ONS, BUNDLES, TERMS ===== -->
+<div class="page">
+  <div class="hdr">
+    <div class="hdr-logo"><img src="images/horns-gold.png" alt=""><span>GAZELLIA</span></div>
+    <div class="hdr-right"><strong>Services & Pricing</strong>Add-Ons & Terms</div>
+  </div>
+
+  <div class="divider">Add-On Agents</div>
+
+  <div class="addons">
+    <div class="addon">
+      <div class="addon-name">Infrastructure Monitoring Agent</div>
+      <div class="addon-price">$1,000 – $2,500/mo</div>
+      <div class="addon-desc">24/7 cloud monitoring, cost anomaly detection, performance alerts, auto-remediation, and monthly optimization reports.</div>
+    </div>
+    <div class="addon">
+      <div class="addon-name">Data Intelligence Agent</div>
+      <div class="addon-price">$2,500 – $5,000/mo</div>
+      <div class="addon-desc">Multi-source data ingestion, pattern detection, record enrichment, and actionable insight surfacing from your existing databases.</div>
+    </div>
+    <div class="addon">
+      <div class="addon-name">QA & Testing Agent</div>
+      <div class="addon-price">$1,500 – $3,000/mo</div>
+      <div class="addon-desc">Automated test generation, regression suite management, flaky test identification, and pre-deployment validation in your CI/CD pipeline.</div>
+    </div>
+    <div class="addon">
+      <div class="addon-name">Managed Maintenance</div>
+      <div class="addon-price">$500 – $1,500/mo</div>
+      <div class="addon-desc">Ongoing bug fixes, security patches, dependency updates, and performance optimization for existing applications.</div>
+    </div>
+  </div>
+
+  <div class="addons" style="margin-top:12px;">
+    <div class="addon">
+      <div class="addon-name">Cloud Architecture & DevOps</div>
+      <div class="addon-price">$125 – $175/hr</div>
+      <div class="addon-desc">AWS infrastructure design, cost optimization, Terraform, CI/CD pipelines, multi-account strategies.</div>
+    </div>
+    <div class="addon">
+      <div class="addon-name">AI Strategy Consulting</div>
+      <div class="addon-price">$150 – $200/hr</div>
+      <div class="addon-desc">Evaluate AI opportunities, technology selection, architecture planning, build vs. buy analysis.</div>
+    </div>
+  </div>
+
+  <div class="comparison" style="margin-top:24px;">
+    <h3>Bundle & Save</h3>
+    <div class="comp-grid">
+      <div class="comp-col">
+        <div class="label">Dev + Marketing Agent</div>
+        <div class="value ours">10% off</div>
+      </div>
+      <div class="comp-col">
+        <div class="label">3+ Agents</div>
+        <div class="value ours">15% off</div>
+      </div>
+      <div class="comp-col">
+        <div class="label">Annual Commitment</div>
+        <div class="value ours">20% off</div>
+      </div>
+      <div class="comp-col">
+        <div class="label">White-Label (Agencies)</div>
+        <div class="value ours">Custom</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="notes">
+    <h3>Terms & Notes</h3>
+    <ul>
+      <li>All services are month-to-month unless annual commitment is selected for discount</li>
+      <li>No setup fees — agent onboarding and configuration is included</li>
+      <li>Custom software: 50% deposit, 50% on delivery (milestone-based for larger projects)</li>
+      <li>Hourly services billed weekly with detailed time tracking</li>
+      <li>AWS infrastructure costs passed through at cost — no markup</li>
+      <li>Ad spend for marketing services is separate, managed in your own ad accounts</li>
+      <li><strong style="color:#F0F0F2;">All code is your intellectual property</strong> — full repo access from day one</li>
+      <li>Senior engineer hours beyond plan allocation billed at $125/hr</li>
+      <li>Escalated tickets count against senior engineer hours, not agent ticket count</li>
+      <li>14-day cancellation notice for monthly services</li>
+      <li>Pricing subject to scope — high-volume or complex integrations may require custom quotes</li>
+    </ul>
+  </div>
+
+  <div class="pg-footer"><span>gazellia.com</span><span>Confidential — Do not distribute</span><span>Page 3 of 3</span></div>
+</div>
+
+</body>
+</html>
